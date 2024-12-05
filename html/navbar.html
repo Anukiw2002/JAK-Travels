@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <div class="logoContainer">
+          <a href="/" class="logo" aria-label="JAK Travels Home">
+            <img src="/images/logoIcon.png" alt="" />
+          </a>
+          <img
+            src="/images/logoText.png"
+            alt="Company Logo"
+            class="logo-img2"
+          />
+        </div>
+
+        <button
+          class="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/destinations" class="nav-link">Destinations</a></li>
+          <li><a href="/experiences" class="nav-link">Experiences</a></li>
+          <li><a href="/tours" class="nav-link">Tours</a></li>
+          <li>
+            <a href="/html/contactUs.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

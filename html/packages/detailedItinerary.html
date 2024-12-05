@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../../css/packages.css" />
+    <section class="itinerary-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Day by Day Itinerary</h2>
+          <p class="section-subtitle">
+            Your journey through paradise, carefully planned for an
+            unforgettable experience
+          </p>
+        </div>
+
+        <div class="itinerary-container">
+          <!-- Day 01 -->
+          <div class="day-card scroll-reveal">
+            <div class="day-header">
+              <div class="day-title-group">
+                <div class="day-number">01</div>
+                <div class="day-info">
+                  <div class="day-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Negombo
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="activities-container">
+              <div class="activity-block">
+                <div class="activity-time">
+                  <div class="time-icon">
+                    <i class="fas fa-sun"></i>
+                  </div>
+                  <div class="time-label">Morning</div>
+                </div>
+
+                <div class="activity-content">
+                  <h4 class="activity-title">AIRPORT PICKUP</h4>
+                  <p class="activity-description">
+                    Upon your arrival, we will pick you up from the airport and
+                    transport you to your accommodation, where you can unwind
+                    and prepare for the exciting journey ahead.
+                  </p>
+                </div>
+
+                <div class="activity-image-container">
+                  <img
+                    src="../../images/Blue Orbit.jpg"
+                    alt="Botanical Gardens"
+                    class="activity-image"
+                  />
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="activity-block">
+                <div class="activity-time">
+                  <div class="time-icon">
+                    <i class="fas fa-moon"></i>
+                  </div>
+                  <div class="time-label">Afternoon</div>
+                </div>
+
+                <div class="activity-content">
+                  <h4 class="activity-title">FISHING VILLAGE</h4>
+                  <p class="activity-description">
+                    We’ll guide you on an immersive tour of the local fishing
+                    village, allowing you to experience and appreciate the rich
+                    culture and unique practices that define it.
+                  </p>
+                </div>
+
+                <div class="activity-image-container">
+                  <img
+                    src="../../images/Blue Orbit.jpg"
+                    alt="Cultural Dance"
+                    class="activity-image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "50px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            entry.target.style.transitionDelay =
+              entry.target.dataset.delay || "0ms";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".day-card").forEach((card, index) => {
+        card.dataset.delay = `${index * 200}ms`;
+        observer.observe(card);
+      });
+    </script>
+  </head>
+</html>

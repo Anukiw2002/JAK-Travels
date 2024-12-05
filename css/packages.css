@@ -1,0 +1,580 @@
+/* Base Styles */
+:root {
+  --primary: #264653;
+  --secondary: #2a9d8f;
+  --background: #f8f9fa;
+  --text: #333;
+  --light-text: #666;
+  --border: #e0e0e0;
+  --gradient: linear-gradient(90deg, var(--secondary), var(--primary));
+  --shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.day-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  margin-top: 60px; /* Adjust the top margin based on your navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../images/Ella.jpg") no-repeat center center;
+  background-size: cover;
+  animation: scaleBackground 20s infinite alternate;
+  filter: brightness(0.9);
+  z-index: -1;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+/* Section Styles */
+.section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.highlight-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transition: var(--transition);
+  transform-origin: left;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+}
+
+.highlight-card:hover::before {
+  transform: scaleX(1);
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.highlight-title {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Map Container Styles */
+.map-section {
+  padding: 0;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+}
+
+.map-container {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 550px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Map Info Styles */
+.map-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.map-info .item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(42, 157, 143, 0.1);
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.map-info .item:hover {
+  background: rgba(42, 157, 143, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Hover Effects */
+.map-container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.map-container:hover iframe {
+  filter: saturate(1.1);
+}
+
+@keyframes scaleBackground {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Animation */
+.map-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Package Details */
+.package-details {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+/* Button */
+.btn {
+  background: var(--gradient);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(42, 157, 143, 0.2);
+}
+
+/* Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s all ease-in-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .map-container iframe {
+    height: 400px;
+  }
+
+  .map-info {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+.itinerary-section {
+  padding: 0;
+  background: var(--background);
+}
+
+.itinerary-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+.itinerary-section .day-card {
+  position: relative;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.itinerary-section .day-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.itinerary-section .day-header {
+  background: var(--gradient);
+  padding: 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.itinerary-section .day-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.day-info {
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  padding-left: 1.5rem;
+}
+
+.day-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  /*margin-bottom: 0.5rem;*/
+}
+
+.day-location {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.activities-container {
+  padding: 0.8rem;
+}
+
+.activity-block {
+  display: grid;
+  grid-template-columns: auto 1fr 0.8fr;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.activity-block:hover {
+  background: rgba(42, 157, 143, 0.05);
+}
+
+.activity-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.time-label {
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.time-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.activity-content {
+  position: relative;
+}
+
+.activity-title {
+  font-size: 1.4rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.activity-description {
+  color: var(--light-text);
+  line-height: 1.8;
+}
+
+.activity-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 4/3;
+  max-height: 200px; /* Add this to limit height */
+  width: 90%; /* Make it slightly less wide */
+  margin-left: auto; /* Center it in its column */
+}
+
+.activity-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.activity-block:hover .activity-image {
+  transform: scale(1.05);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 2rem;
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .activity-block {
+    grid-template-columns: auto 1fr;
+  }
+
+  .activity-image-container {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .activity-block {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .activity-time {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .day-title-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .day-info {
+    border-left: none;
+    padding-left: 0;
+  }
+}

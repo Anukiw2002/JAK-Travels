@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/contactUs.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="contact-page">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Contact Us</h1>
+          <p class="hero-subtitle">
+            Let's plan your perfect Sri Lankan adventure together
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Ready to Explore?</h2>
+            <p class="section-subtitle">
+              Our travel experts are here to craft your perfect Sri Lankan
+              journey
+            </p>
+          </div>
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>123 Tourism Street, City Center</p>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <a
+                  href="https://wa.me/+94767666390"
+                  class="contact-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>+1 234 567 8900</p>
+                </a>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <a
+                  href="mailto:info@tourismguide.com?source=website"
+                  class="contact-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>info@tourismguide.com</p>
+                </a>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+              </div>
+              <div class="social-links">
+                <a href="#" aria-label="Facebook" class="social-link"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" aria-label="Twitter" class="social-link"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" aria-label="Instagram" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn" class="social-link"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="contact-form">
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name"
+                    >Your Name<span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"
+                    >Your Email<span class="required">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Enter your email address"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone"
+                    >Phone Number<span class="required">*</span></label
+                  >
+                  <div class="phone-input-wrapper">
+                    <select id="countryCode" name="countryCode" required>
+                      <option value="+1">+1 (USA/Canada)</option>
+                      <option value="+44">+44 (UK)</option>
+                      <option value="+33">+33 (France)</option>
+                      <option value="+49">+49 (Germany)</option>
+                      <option value="+81">+81 (Japan)</option>
+                      <option value="+86">+86 (China)</option>
+                      <option value="+91">+91 (India)</option>
+                      <option value="+61">+61 (Australia)</option>
+                      <option value="+55">+55 (Brazil)</option>
+                      <option value="+7">+7 (Russia)</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      placeholder="Enter your phone number"
+                      pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="country"
+                    >Country<span class="required">*</span></label
+                  >
+                  <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="US">United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                    <option value="JP">Japan</option>
+                    <option value="CN">China</option>
+                    <option value="IN">India</option>
+                    <option value="AU">Australia</option>
+                    <option value="BR">Brazil</option>
+                    <option value="CA">Canada</option>
+                    <option value="IT">Italy</option>
+                    <option value="ES">Spain</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="RU">Russia</option>
+                    <option value="KR">South Korea</option>
+                    <option value="SG">Singapore</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="MX">Mexico</option>
+                    <option value="SE">Sweden</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter message subject"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Enter your message"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn">Send Message</button>
+                </div>
+                <div class="success-message" id="successMessage">
+                  Thank you for your message! We'll get back to you soon.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <br />
+    <br />
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/contactForm.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load navbar.html content
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>
