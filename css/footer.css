@@ -231,3 +231,49 @@
     justify-content: center;
   }
 }
+
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.developer-credit {
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
+.developer-credit a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.developer-credit a:hover {
+  color: var(--primary);
+}
+
+.developer-credit .fa-heart {
+  color: #e74c3c;
+  margin: 0 0.2rem;
+  animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-credits {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
