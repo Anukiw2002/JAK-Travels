@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Ella - Sri Lanka's Mountain Paradise</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .intro-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        padding: 6rem 0;
+        margin-top: -4rem;
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .intro-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .intro-text {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        color: var(--text);
+        position: relative;
+        padding: 2rem;
+        border-left: 4px solid var(--secondary);
+        background: white;
+        border-radius: 0 20px 20px 0;
+        box-shadow: var(--shadow);
+        animation: slideIn 1s ease;
+      }
+
+      .intro-text::before {
+        content: '"';
+        font-size: 5rem;
+        color: var(--secondary);
+        opacity: 0.2;
+        position: absolute;
+        top: -1rem;
+        left: 1rem;
+        font-family: Georgia, serif;
+      }
+
+      .intro-highlight {
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .intro-text {
+          font-size: 1.1rem;
+          padding: 1.5rem;
+        }
+      }
+
+      .parallax-hero {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .parallax-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        will-change: transform;
+      }
+
+      .destination-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        margin-bottom: 2rem;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.5s ease;
+      }
+
+      .destination-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .destination-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .destination-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .destination-content {
+        padding: 2rem;
+      }
+
+      .destination-title {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .info-item {
+        background: var(--gradient);
+        color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .quick-facts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
+      }
+
+      .fact-card {
+        background: var(--gradient);
+        color: white;
+        padding: 2rem;
+        border-radius: 20px;
+        text-align: center;
+        animation: floatAnimation 3s ease-in-out infinite;
+      }
+
+      .tips-list {
+        margin: 1rem 0;
+        padding-left: 1.2rem;
+      }
+
+      .tips-list li {
+        margin-bottom: 0.5rem;
+        position: relative;
+      }
+
+      @keyframes floatAnimation {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parallax-hero">
+      <div
+        class="parallax-layer"
+        style="background-image: url('/images/Ella.jpg')"
+      ></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Experience Ella</h1>
+        <p class="hero-subtitle">Where misty mountains meet colonial charm</p>
+      </div>
+    </div>
+
+    <section class="intro-section">
+      <div class="intro-container">
+        <div class="intro-text">
+          Nestled in the
+          <span class="intro-highlight"
+            >misty mountains of Sri Lanka's Hill Country</span
+          >
+          at an elevation of 1,041 meters, Ella is a captivating mountain
+          village that enchants visitors with its serene beauty. Famous for its
+          <span class="intro-highlight"
+            >iconic Nine Arch Bridge, challenging hiking trails, and sprawling
+            tea plantations</span
+          >, this picturesque destination offers a perfect blend of adventure
+          and tranquility. Surrounded by rolling hills shrouded in morning mist,
+          cascading waterfalls, and endless views of tea-covered slopes, Ella
+          provides a peaceful retreat where travelers can immerse themselves in
+          nature while enjoying the cool climate and warm hospitality of the
+          highlands.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="quick-facts">
+          <div class="fact-card">
+            <h3>Best Time to Visit</h3>
+            <p>January - March</p>
+          </div>
+          <div class="fact-card" style="animation-delay: 0.2s">
+            <h3>Weather</h3>
+            <p>15°C - 25°C</p>
+          </div>
+          <div class="fact-card" style="animation-delay: 0.4s">
+            <h3>Duration Needed</h3>
+            <p>2-3 Days</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/ellaTainRide.jpg"
+            alt="Nine Arch Bridge"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h2 class="destination-title">Nine Arch Bridge</h2>
+            <p>
+              A magnificent colonial-era railway bridge surrounded by lush tea
+              plantations. This architectural marvel spans 91 meters and stands
+              24 meters high.
+            </p>
+
+            <div class="info-grid">
+              <div class="info-item">
+                <h4>Best Time</h4>
+                <p>6AM - 9AM</p>
+              </div>
+              <div class="info-item">
+                <h4>Train Times</h4>
+                <p>9:30AM, 3:30PM</p>
+              </div>
+              <div class="info-item">
+                <h4>Duration</h4>
+                <p>2-3 hours</p>
+              </div>
+            </div>
+
+            <h4>Visitor Tips:</h4>
+            <ul class="tips-list">
+              <li>Arrive early for the best photography lighting</li>
+              <li>Check train schedules for perfect photo opportunities</li>
+              <li>Walk along the railway track from Ella station (30 mins)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Ella Rock.jpg"
+            alt="Ella Rock"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h2 class="destination-title">Ella Rock</h2>
+            <p>
+              A challenging but rewarding hike offering breathtaking panoramic
+              views of Ella Gap and the surrounding hills. The perfect spot for
+              sunrise photography.
+            </p>
+
+            <div class="info-grid">
+              <div class="info-item">
+                <h4>Hike Duration</h4>
+                <p>4-5 hours</p>
+              </div>
+              <div class="info-item">
+                <h4>Difficulty</h4>
+                <p>Moderate</p>
+              </div>
+              <div class="info-item">
+                <h4>Best Time</h4>
+                <p>Start at 3AM</p>
+              </div>
+            </div>
+
+            <h4>Hiking Tips:</h4>
+            <ul class="tips-list">
+              <li>Start early to catch the sunrise</li>
+              <li>Bring plenty of water and snacks</li>
+              <li>Wear proper hiking shoes</li>
+              <li>Consider hiring a local guide</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Ella Swing.jpg"
+            alt="Ravana Falls"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h2 class="destination-title">Ravana Falls</h2>
+            <p>
+              A majestic cascading waterfall with mythological significance,
+              perfect for photography and refreshing breaks during your Ella
+              journey.
+            </p>
+
+            <div class="info-grid">
+              <div class="info-item">
+                <h4>Height</h4>
+                <p>25 meters</p>
+              </div>
+              <div class="info-item">
+                <h4>Best Season</h4>
+                <p>Nov - Mar</p>
+              </div>
+              <div class="info-item">
+                <h4>Duration</h4>
+                <p>1-2 hours</p>
+              </div>
+            </div>
+
+            <h4>Visitor Tips:</h4>
+            <ul class="tips-list">
+              <li>Visit early morning to avoid crowds</li>
+              <li>Be careful on slippery rocks</li>
+              <li>Bring a change of clothes if planning to swim</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const parallax = document.querySelector(".parallax-layer");
+        let scrollPosition = window.pageYOffset;
+        parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+      });
+
+      // Scroll Animation
+      const cards = document.querySelectorAll(".destination-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    </script>
+  </body>
+</html>

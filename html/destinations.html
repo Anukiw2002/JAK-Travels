@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Sri Lanka - Popular Destinations</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .hero {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: zoomEffect 20s infinite alternate;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 2rem;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUpIn 1s forwards;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUpIn 1s 0.3s forwards;
+      }
+
+      .hero-btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: var(--gradient);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUpIn 1s 0.6s forwards;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes zoomEffect {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes fadeUpIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .destination-card {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .destination-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .destination-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 2rem;
+        color: white;
+        transform: translateY(100px);
+        transition: transform 0.5s ease;
+      }
+
+      .destination-card:hover .destination-image {
+        transform: scale(1.1);
+      }
+
+      .destination-card:hover .destination-content {
+        transform: translateY(0);
+      }
+
+      .destination-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .destination-description {
+        font-size: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+      }
+
+      .destination-card:hover .destination-description {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .tags {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .tag {
+        background: var(--secondary);
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+
+      .filter-container {
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .filter-btn {
+        background: white;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-btn.active {
+        background: var(--gradient);
+        color: white;
+        border: none;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .destination-grid {
+        animation: fadeIn 0.8s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <img
+        src="../images/unawatuna-beach-with-boats.jpg"
+        alt="Sri Lanka Landscape"
+        class="hero-image"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Welcome to Sri Lanka</h1>
+        <p class="hero-subtitle">
+          Discover the endless wonders of our tropical paradise
+        </p>
+        <a href="#destinations" class="hero-btn">Explore Destinations</a>
+      </div>
+      <div class="scroll-indicator">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+          <path d="M7 10l5 5 5-5H7z" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Discover Sri Lanka</h1>
+          <p class="section-subtitle">
+            Explore the pearl of the Indian Ocean - from pristine beaches to
+            misty mountains
+          </p>
+        </div>
+
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="beach">Beaches</button>
+          <button class="filter-btn" data-filter="culture">Cultural</button>
+          <button class="filter-btn" data-filter="nature">Nature</button>
+          <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+        </div>
+
+        <div class="grid grid-3 destination-grid">
+          <!-- Destinations will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const destinations = [
+        {
+          name: "Galle Fort",
+          description:
+            "A UNESCO World Heritage site featuring colonial architecture, ancient ramparts, and vibrant culture.",
+          image: "../images/gall3.jpg",
+          tags: ["culture", "history"],
+          link: "/destinations/galle-fort",
+        },
+        {
+          name: "Mirissa Beach",
+          description:
+            "Crystal clear waters, whale watching, and spectacular sunsets along the southern coast.",
+          image: "../images/Mirissa.jpg",
+          tags: ["beach", "wildlife"],
+          link: "/destinations/mirissa",
+        },
+        {
+          name: "Yala National Park",
+          description:
+            "Home to leopards, elephants, and diverse wildlife in their natural habitat.",
+          image: "../images/Yala.jpg",
+          tags: ["wildlife", "nature"],
+          link: "/destinations/yala",
+        },
+        {
+          name: "Ella",
+          description:
+            "Misty mountains, tea plantations, and the famous Nine Arch Bridge.",
+          image: "/api/placeholder/800/600",
+          tags: ["nature"],
+          link: "/html/destinations/ella.html",
+        },
+        {
+          name: "Sigiriya",
+          description:
+            "Ancient palace atop a rock fortress with stunning frescoes and gardens.",
+          image: "/api/placeholder/800/600",
+          tags: ["culture", "history"],
+          link: "/destinations/sigiriya",
+        },
+        {
+          name: "Unawatuna",
+          description:
+            "Pristine beach paradise with coral reefs and water sports.",
+          image: "/api/placeholder/800/600",
+          tags: ["beach"],
+          link: "/destinations/unawatuna",
+        },
+      ];
+
+      function createDestinationCard(destination) {
+        return `
+                <a href="${destination.link}" class="destination-card">
+                    <img src="${destination.image}" alt="${
+          destination.name
+        }" class="destination-image">
+                    <div class="destination-content">
+                        <h3 class="destination-title">${destination.name}</h3>
+                        <p class="destination-description">${
+                          destination.description
+                        }</p>
+                        <div class="tags">
+                            ${destination.tags
+                              .map((tag) => `<span class="tag">${tag}</span>`)
+                              .join("")}
+                        </div>
+                    </div>
+                </a>
+            `;
+      }
+
+      function renderDestinations(filter = "all") {
+        const grid = document.querySelector(".destination-grid");
+        grid.style.opacity = "0";
+
+        setTimeout(() => {
+          const filteredDestinations =
+            filter === "all"
+              ? destinations
+              : destinations.filter((dest) => dest.tags.includes(filter));
+
+          grid.innerHTML = filteredDestinations
+            .map(createDestinationCard)
+            .join("");
+
+          grid.style.opacity = "1";
+        }, 300);
+      }
+
+      // Initialize page
+      renderDestinations();
+
+      // Filter buttons functionality
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          e.target.classList.add("active");
+          renderDestinations(e.target.dataset.filter);
+        });
+      });
+    </script>
+  </body>
+</html>
