@@ -11,6 +11,72 @@
   --transition: all 0.3s ease;
 }
 
+/*hero section*/
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomEffect 20s infinite alternate;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpIn 1s forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpIn 1s 0.3s forwards;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--gradient);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpIn 1s 0.6s forwards;
+}
+
 /* Reset & Global */
 * {
   margin: 0;
@@ -39,34 +105,39 @@ body {
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
+  position: relative;
+  animation: fadeInUp 1s ease 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .section-title {
   font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
+  background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 .section-title::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: var(--gradient);
+  background: linear-gradient(90deg, #2a9d8f, #264653);
   border-radius: 2px;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--light-text);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* Card Styles */
@@ -156,6 +227,27 @@ select:focus {
 }
 .grid-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this to your existing CSS */
+.section-header {
+  text-align: center;
+  margin-bottom: 6rem;
+  position: relative;
+  animation: fadeInUp 1s ease 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 /* Media Queries */

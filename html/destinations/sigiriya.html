@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Sigiriya - The Eighth Wonder of the Ancient World</title>
+    <link rel="stylesheet" href="/css/destination details.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="parallax-hero">
+      <div
+        class="parallax-layer"
+        style="background-image: url('/images/Sigirya/Sigiriya\ 05.jpg')"
+      ></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Experience Sigiriya</h1>
+        <p class="hero-subtitle">
+          Where ancient luxury meets engineering brilliance
+        </p>
+      </div>
+    </div>
+
+    <section class="overview-section">
+      <div class="overview-container">
+        <div class="overview-content">
+          <h2 class="section-title">Discover Sigiriya</h2>
+          <br />
+          <br />
+
+          <p>
+            Welcome to Sigiriya, the magnificent 'Lion Rock' fortress that rises
+            dramatically 200 meters above the surrounding plains. This
+            5th-century UNESCO World Heritage site stands as a testament to
+            ancient Sri Lankan ingenuity, combining a royal palace,
+            sophisticated urban planning, and stunning artistry into one
+            awe-inspiring monument.
+          </p>
+          <br />
+          <p>Experience this wonder with our expert guides:</p>
+          <br />
+          <ul>
+            <li>Early morning climb to avoid crowds and heat</li>
+            <li>
+              Expert narration of the site's rich history and engineering
+              marvels
+            </li>
+            <li>Best photo opportunities at each level of the climb</li>
+            <li>Cultural insights into ancient Sri Lankan civilization</li>
+            <li>Safe navigation of the ancient stairways and passages</li>
+          </ul>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3947.519827206447!2d80.75617631478218!3d7.957433794267516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afca15b5118fded%3A0x1d711f45897009a2!2sSigiriya!5e0!3m2!1sen!2slk!4v1701856247688!5m2!1sen!2slk"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Must-Visit Attractions</h2>
+        <p class="section-subtitle">
+          Explore the wonders of this ancient palace-fortress
+        </p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="destination-card">
+          <img
+            src="/images/Sigiriya.jpg"
+            alt="Sigiriya Rock Fortress"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Sigiriya Rock Fortress</h3>
+            <p>
+              The crown jewel of ancient Sri Lanka, this stunning
+              palace-fortress includes magnificent water gardens, vibrant
+              frescoes, the mirror wall with ancient graffiti, massive lion paw
+              sculptures, and the summit palace complex. The climb, while
+              challenging, offers increasingly spectacular views and a chance to
+              explore various levels of this architectural marvel. Visit early
+              morning for cooler temperatures and the best lighting for
+              photography.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Sigirya/Pidurangala Rock.jpg"
+            alt="Pidurangala Rock"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Pidurangala Rock</h3>
+            <p>
+              This lesser-known but equally impressive rock formation offers the
+              best views of Sigiriya fortress. A more adventurous climb leads to
+              an ancient cave temple and stunning panoramic views. Visit for
+              sunrise or sunset for spectacular photo opportunities of Sigiriya
+              Rock and the surrounding landscape. The climb is more challenging
+              but less crowded than Sigiriya.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Sigirya/Sigiriya Museum.jpg"
+            alt="Sigiriya Museum"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Sigiriya Museum</h3>
+            <p>
+              Begin your exploration at this modern museum featuring detailed
+              models, artifacts, and interactive displays that bring the history
+              of Sigiriya to life. Learn about the construction techniques, see
+              artifacts discovered at the site, and understand the historical
+              context of this remarkable fortress through multimedia
+              presentations and archaeological findings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const parallax = document.querySelector(".parallax-layer");
+        let scrollPosition = window.pageYOffset;
+        let scale = 1 + scrollPosition * 0.0003;
+        parallax.style.transform = `translateY(${
+          scrollPosition * 0.5
+        }px) scale(${scale})`;
+      });
+
+      // Scroll Animation
+      const cards = document.querySelectorAll(".destination-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load navbar.html content
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>

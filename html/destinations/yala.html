@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Yala - Sri Lanka's Premier Wildlife Destination</title>
+    <link rel="stylesheet" href="/css/destination details.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="parallax-hero">
+      <div
+        class="parallax-layer"
+        style="background-image: url('/images/Yala/Yala.jpg')"
+      ></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Experience Yala</h1>
+        <p class="hero-subtitle">
+          Home to the world's highest density of leopards
+        </p>
+      </div>
+    </div>
+
+    <section class="overview-section">
+      <div class="overview-container">
+        <div class="overview-content">
+          <h2 class="section-title">Discover Yala</h2>
+          <br />
+          <br />
+
+          <p>
+            Welcome to Yala National Park, Sri Lanka's most visited wildlife
+            sanctuary and home to one of the world's highest densities of
+            leopards. This vast protected area combines sweeping grasslands,
+            lagoons, and dense forest, creating diverse habitats for an
+            incredible variety of wildlife.
+          </p>
+          <br />
+          <p>Experience the wilderness with our expert safari guides:</p>
+          <br />
+          <ul>
+            <li>
+              Early morning and evening game drives for optimal wildlife viewing
+            </li>
+            <li>
+              Tracking of leopards and other big game with experienced rangers
+            </li>
+            <li>Bird watching at coastal wetlands and lagoons</li>
+            <li>Photography guidance at prime wildlife spots</li>
+          </ul>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126757.45676178056!2d81.4215!3d6.3728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae682829104411d%3A0x6c0c67bc7fc811a9!2sYala%20National%20Park!5e0!3m2!1sen!2slk!4v1701856247688!5m2!1sen!2slk"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Must-Visit Destinations</h2>
+        <p class="section-subtitle">
+          Explore the diverse ecosystems and wildlife of Yala
+        </p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="destination-card">
+          <img
+            src="/images/Yala/Safari.jpg"
+            alt="Yala Safari"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Yala Safari Experience</h3>
+            <p>
+              Embark on an exciting 4x4 safari through Sri Lanka's most visited
+              national park. Known for having the world's highest density of
+              leopards, Yala also offers sightings of elephants, sloth bears,
+              crocodiles, and numerous bird species. Best experienced during
+              early morning or late afternoon for optimal wildlife viewing.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Yala/sithulpawwa.jpg"
+            alt="Situlpawwa Temple"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Situlpawwa Ancient Monastery</h3>
+            <p>
+              An ancient rock temple monastery dating back to the 2nd century
+              BC. Located within Block 1, this archaeological site offers a
+              unique blend of cultural heritage and wildlife. The elevated
+              position provides panoramic views of the surrounding wilderness.
+              Watch for resident troops of monkeys and numerous bird species.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Yala/coastal habitat.jpg"
+            alt="Coastal Areas"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Coastal Habitats & Beaches</h3>
+            <p>
+              Explore Yala's pristine coastline where dense jungle meets the
+              Indian Ocean. These areas are important nesting sites for sea
+              turtles and home to saltwater crocodiles. The rocky outcrops and
+              beaches provide excellent opportunities to spot shore birds and
+              marine life. Spectacular sunset views make this area perfect for
+              photography.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Yala/patanangala rock.jpg"
+            alt="Patanangala Viewpoint"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Patanangala Viewpoint</h3>
+            <p>
+              A dramatic coastal viewpoint offering panoramic views of the
+              Indian Ocean and surrounding landscape. This elevated position is
+              excellent for spotting marine life and coastal birds. The area is
+              also known for frequent leopard sightings, as these big cats often
+              patrol the rocky outcrops during early morning and late evening.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const parallax = document.querySelector(".parallax-layer");
+        let scrollPosition = window.pageYOffset;
+        let scale = 1 + scrollPosition * 0.0003;
+        parallax.style.transform = `translateY(${
+          scrollPosition * 0.5
+        }px) scale(${scale})`;
+      });
+
+      // Scroll Animation
+      const cards = document.querySelectorAll(".destination-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load navbar.html content
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>

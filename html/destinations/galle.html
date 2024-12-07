@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Galle - Historic Coastal Paradise</title>
+    <link rel="stylesheet" href="/css/destination details.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="parallax-hero">
+      <div
+        class="parallax-layer"
+        style="background-image: url('/images/Galle/Galle.jpg')"
+      ></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Experience Galle</h1>
+        <p class="hero-subtitle">
+          Where colonial heritage meets tropical charm
+        </p>
+      </div>
+    </div>
+
+    <section class="overview-section">
+      <div class="overview-container">
+        <div class="overview-content">
+          <h2 class="section-title">Discover Galle</h2>
+          <br />
+          <br />
+
+          <p>
+            Welcome to Galle, a UNESCO World Heritage site that perfectly blends
+            colonial architecture with tropical beauty. This historic coastal
+            city, with its iconic 17th-century Dutch fort, offers a unique
+            journey through time while providing modern comfort and charm.
+          </p>
+          <br />
+          <p>Our carefully curated tours include:</p>
+          <br />
+          <ul>
+            <li>Guided walks along the historic ramparts</li>
+            <li>Exploration of Dutch colonial architecture</li>
+            <li>Visits to historic churches and museums</li>
+            <li>Local craft and gem shopping experiences</li>
+            <li>Luxury stays in restored colonial buildings</li>
+          </ul>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31736.96318964595!2d80.21501565!3d6.0328768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173bb6932fce3%3A0x4a35b903f9c64c03!2sGalle!5e0!3m2!1sen!2slk!4v1701856247688!5m2!1sen!2slk"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Must-Visit Destinations</h2>
+        <p class="section-subtitle">
+          Explore the most iconic locations in Galle with our expert guides
+        </p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="destination-card">
+          <img
+            src="/images/Galle/Galle Fort Ramparts.jpg"
+            alt="Galle Fort Ramparts"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Galle Fort Ramparts</h3>
+            <p>
+              Walk along the historic 17th-century ramparts for stunning ocean
+              views and sunset vistas. Our guides share fascinating stories of
+              the fort's maritime history and colonial past.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Galle/Dutch Reformed Church.jpg"
+            alt="Dutch Reformed Church"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Dutch Reformed Church</h3>
+            <p>
+              Visit this remarkable 1755 church with its historic organ, ornate
+              graves, and beautiful Dutch colonial architecture. Experience one
+              of the oldest Protestant churches in Sri Lanka.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Galle/maritime Museum.jpg"
+            alt="Maritime Museum"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Maritime Museum</h3>
+            <p>
+              Housed in a restored Dutch warehouse, discover Sri Lanka's rich
+              maritime history through artifacts, maps, and naval craft dating
+              back to the colonial era.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Galle/Unawatuna Beach.jpg"
+            alt="Unawatuna Beach"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Unawatuna Beach</h3>
+            <p>
+              Relax at this crescent-shaped golden beach, perfect for swimming
+              and snorkeling. Enjoy fresh seafood at beachside restaurants and
+              stunning sunset views.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Galle/National Museum of Galle.jpg"
+            alt="National Museum"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">National Museum of Galle</h3>
+            <p>
+              Explore traditional Sri Lankan artifacts, Dutch colonial items,
+              and archaeological treasures in this beautifully preserved
+              building from the Dutch period.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/gall3.jpg"
+            alt="Galle Lighthouse"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Galle Lighthouse</h3>
+            <p>
+              Visit Sri Lanka's oldest light station still in use, built in
+              1939. The perfect spot for photographs with its striking white
+              structure against the blue ocean.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const parallax = document.querySelector(".parallax-layer");
+        let scrollPosition = window.pageYOffset;
+        let scale = 1 + scrollPosition * 0.0003;
+        parallax.style.transform = `translateY(${
+          scrollPosition * 0.5
+        }px) scale(${scale})`;
+      });
+
+      // Scroll Animation
+      const cards = document.querySelectorAll(".destination-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load navbar.html content
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>

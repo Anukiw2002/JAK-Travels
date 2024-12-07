@@ -3,226 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discover Ella - Sri Lanka's Mountain Paradise</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <style>
-      .parallax-hero {
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .parallax-layer {
-        position: absolute;
-        width: 100%;
-        height: 120%; /* Increased height for more dramatic effect */
-        background-position: center;
-        background-size: cover;
-        will-change: transform;
-        transform-origin: bottom;
-        filter: brightness(
-          0.8
-        ); /* Darkens the image slightly to make text more readable */
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: white;
-        padding: 2rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .hero-title {
-        font-size: 4.5rem;
-        margin-bottom: 1rem;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .hero-subtitle {
-        font-size: 1.8rem;
-        opacity: 0.9;
-        animation: fadeInUp 1s ease-out 0.3s backwards;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .destination-card {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        margin-bottom: 2rem;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.5s ease;
-      }
-
-      .destination-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .destination-card:hover {
-        transform: translateY(-10px);
-      }
-
-      .destination-image {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-      }
-
-      .destination-content {
-        padding: 2rem;
-      }
-
-      .destination-title {
-        font-size: 1.8rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-      }
-
-      .info-item {
-        background: var(--gradient);
-        color: white;
-        padding: 1rem;
-        border-radius: 10px;
-        text-align: center;
-      }
-
-      .quick-facts {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin: 4rem 0;
-      }
-
-      .fact-card {
-        background: var(--gradient);
-        color: white;
-        padding: 2rem;
-        border-radius: 20px;
-        text-align: center;
-        animation: floatAnimation 3s ease-in-out infinite;
-      }
-
-      .tips-list {
-        margin: 1rem 0;
-        padding-left: 1.2rem;
-      }
-
-      .tips-list li {
-        margin-bottom: 0.5rem;
-        position: relative;
-      }
-
-      @keyframes floatAnimation {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      .contact-page .section-header {
-        text-align: center;
-        margin-bottom: 6rem;
-        position: relative;
-        animation: fadeInUp 1s ease 0.2s;
-        opacity: 0;
-        animation-fill-mode: forwards;
-      }
-
-      .section-title {
-        font-size: 3.5rem;
-        background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 1.5rem;
-      }
-
-      .section-subtitle {
-        font-size: 1.2rem;
-        color: #666;
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.8;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(90deg, #2a9d8f, #264653);
-        border-radius: 2px;
-      }
-
-      .description-box {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 2.5rem;
-        background: white;
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        animation: fadeIn 1s ease-out;
-      }
-
-      .description-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .description-text {
-        text-align: center;
-        line-height: 1.8;
-        color: var(--light-text);
-        font-size: 1.1rem;
-        margin: 0;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+    <title>Discover Ella - Your Mountain Paradise Adventure</title>
+    <link rel="stylesheet" href="/css/destination details.css" />
   </head>
   <body>
+    <div id="navbar-placeholder"></div>
     <div class="parallax-hero">
       <div
         class="parallax-layer"
@@ -233,42 +18,55 @@
         <p class="hero-subtitle">Where misty mountains meet colonial charm</p>
       </div>
     </div>
-    <br />
-    <br />
 
-    <div class="section-header">
-      <h2 class="section-title">Discover Ella</h2>
-      <p class="section-subtitle">Nature's hidden gem</p>
-    </div>
+    <section class="overview-section">
+      <div class="overview-container">
+        <div class="overview-content">
+          <h2 class="section-title">Discover Ella</h2>
+          <br />
+          <br />
 
-    <div class="description-box">
-      <p class="description-text">
-        Ella is a tranquil and picturesque town located in the heart of Sri
-        Lanka's Hill Country. Known for its breathtaking scenery, lush tea
-        plantations, and majestic waterfalls, Ella offers visitors a serene
-        escape from the busyness of everyday life. This charming destination
-        combines natural beauty with opportunities for adventure, making it a
-        must-visit location for travelers.
-      </p>
-    </div>
+          <p>
+            Welcome to Ella, a breathtaking mountain paradise nestled in the
+            heart of Sri Lanka's Hill Country. Let us guide you through this
+            enchanting destination where every corner tells a story and every
+            view captures your heart.
+          </p>
+          <br />
+          <p>Our expertly crafted tours include:</p>
+          <br />
+          <ul>
+            <li>Scenic train journeys through tea plantations</li>
+            <li>Guided hikes to spectacular viewpoints</li>
+            <li>Photography sessions at the iconic Nine Arch Bridge</li>
+            <li>Authentic local experiences and cuisine</li>
+            <li>Comfortable accommodations with mountain views</li>
+          </ul>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31736.129220673596!2d81.02899185!3d6.8666125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae465d179d6d59f%3A0x1f2047d5c9fe2d88!2sElla%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1701856247688!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
 
     <section class="section">
-      <div class="container">
-        <div class="quick-facts">
-          <div class="fact-card">
-            <h3>Best Time to Visit</h3>
-            <p>January - March</p>
-          </div>
-          <div class="fact-card" style="animation-delay: 0.2s">
-            <h3>Weather</h3>
-            <p>15°C - 25°C</p>
-          </div>
-          <div class="fact-card" style="animation-delay: 0.4s">
-            <h3>Duration Needed</h3>
-            <p>2-3 Days</p>
-          </div>
-        </div>
+      <div class="section-header">
+        <h2 class="section-title">Must-Visit Destinations</h2>
+        <p class="section-subtitle">
+          Explore the most scenic locations in Ella with our expert guides
+        </p>
+      </div>
 
+      <div class="highlights-grid">
         <div class="destination-card">
           <img
             src="/images/Ella/Nine arch bridge.jpg"
@@ -276,34 +74,12 @@
             class="destination-image"
           />
           <div class="destination-content">
-            <h2 class="destination-title">Nine Arch Bridge</h2>
+            <h3 class="destination-title">Nine Arch Bridge</h3>
             <p>
-              A magnificent colonial-era railway bridge surrounded by lush tea
-              plantations. This architectural marvel spans 91 meters and stands
-              24 meters high.
+              Marvel at this architectural masterpiece spanning 91 meters across
+              lush tea plantations. Our guides know the perfect spots and times
+              for photographs.
             </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Best Time</h4>
-                <p>6AM - 9AM</p>
-              </div>
-              <div class="info-item">
-                <h4>Train Times</h4>
-                <p>9:30AM, 3:30PM</p>
-              </div>
-              <div class="info-item">
-                <h4>Duration</h4>
-                <p>2-3 hours</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Arrive early for the best photography lighting</li>
-              <li>Check train schedules for perfect photo opportunities</li>
-              <li>Walk along the railway track from Ella station (30 mins)</li>
-            </ul>
           </div>
         </div>
 
@@ -314,35 +90,43 @@
             class="destination-image"
           />
           <div class="destination-content">
-            <h2 class="destination-title">Ella Rock</h2>
+            <h3 class="destination-title">Ella Rock</h3>
             <p>
-              A challenging but rewarding hike offering breathtaking panoramic
-              views of Ella Gap and the surrounding hills. The perfect spot for
-              sunrise photography.
+              Experience an unforgettable sunrise hike with our experienced
+              guides. Enjoy breathtaking panoramic views of the Ella Gap and
+              surrounding mountains.
             </p>
+          </div>
+        </div>
 
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Hike Duration</h4>
-                <p>4-5 hours</p>
-              </div>
-              <div class="info-item">
-                <h4>Difficulty</h4>
-                <p>Moderate</p>
-              </div>
-              <div class="info-item">
-                <h4>Best Time</h4>
-                <p>Start at 3AM</p>
-              </div>
-            </div>
+        <div class="destination-card">
+          <img
+            src="/images/little Adam's peak.jpg"
+            alt="Little Adam's Peak"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Little Adam's Peak</h3>
+            <p>
+              Take an accessible hike to stunning viewpoints. Perfect for both
+              sunrise and sunset photography, with professional guidance from
+              our team.
+            </p>
+          </div>
+        </div>
 
-            <h4>Hiking Tips:</h4>
-            <ul class="tips-list">
-              <li>Start early to catch the sunrise</li>
-              <li>Bring plenty of water and snacks</li>
-              <li>Wear proper hiking shoes</li>
-              <li>Consider hiring a local guide</li>
-            </ul>
+        <div class="destination-card">
+          <img
+            src="/images/Ravana Cave.jpg"
+            alt="Little Adam's Peak"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Ravana Cave</h3>
+            <p>
+              A mysterious cave tied to the Ramayana legend, perfect for history
+              enthusiasts.
+            </p>
           </div>
         </div>
 
@@ -353,244 +137,43 @@
             class="destination-image"
           />
           <div class="destination-content">
-            <h2 class="destination-title">Ravana Falls</h2>
+            <h3 class="destination-title">Ravana Falls</h3>
             <p>
-              A majestic cascading waterfall with mythological significance,
-              perfect for photography and refreshing breaks during your Ella
-              journey.
+              Visit this majestic waterfall with its rich mythology. Our guides
+              will share ancient legends while you capture perfect photos.
             </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Height</h4>
-                <p>25 meters</p>
-              </div>
-              <div class="info-item">
-                <h4>Best Season</h4>
-                <p>Nov - Mar</p>
-              </div>
-              <div class="info-item">
-                <h4>Duration</h4>
-                <p>1-2 hours</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Visit early morning to avoid crowds</li>
-              <li>Be careful on slippery rocks</li>
-              <li>Bring a change of clothes if planning to swim</li>
-            </ul>
           </div>
         </div>
 
-        <!-- Ella Gap -->
         <div class="destination-card">
           <img
-            src="/images/EllaGap.jpg"
-            alt="Ella Gap"
+            src="/images/Ella Gap.jpg"
+            alt="Ravana Falls"
             class="destination-image"
           />
           <div class="destination-content">
-            <h2 class="destination-title">Ella Gap</h2>
+            <h3 class="destination-title">Ella Gap</h3>
             <p>
-              A breathtaking mountain pass offering panoramic views of the
-              southern plains through a deep valley between the hills. Famous
-              for its spectacular sunrise and sunset views.
+              A breathtaking view through a gap in the hills, offering stunning
+              vistas of the lowlands. Best at sunrise or sunset.
             </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Elevation</h4>
-                <p>1,041 meters</p>
-              </div>
-              <div class="info-item">
-                <h4>Best Time</h4>
-                <p>Early morning</p>
-              </div>
-              <div class="info-item">
-                <h4>Duration</h4>
-                <p>1-3 hours</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Visit at sunrise for the clearest views</li>
-              <li>Bring warm clothing as it can be chilly</li>
-              <li>Don't forget your camera</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Mini Adam's Peak -->
-        <div class="destination-card">
-          <img
-            src="/images/MiniAdamsPeak.jpg"
-            alt="Mini Adam's Peak"
-            class="destination-image"
-          />
-          <div class="destination-content">
-            <h2 class="destination-title">Mini Adam's Peak</h2>
-            <p>
-              A popular hiking destination offering 360-degree views of Ella's
-              landscapes. Named after the sacred Adam's Peak, this smaller
-              version provides a more accessible hiking experience.
-            </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Height</h4>
-                <p>1,141 meters</p>
-              </div>
-              <div class="info-item">
-                <h4>Hike Duration</h4>
-                <p>2-3 hours</p>
-              </div>
-              <div class="info-item">
-                <h4>Difficulty</h4>
-                <p>Moderate</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Start early to avoid afternoon heat</li>
-              <li>Wear proper hiking shoes</li>
-              <li>Carry water and snacks</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Ravana Cave -->
-        <div class="destination-card">
-          <img
-            src="/images/RavanaCave.jpg"
-            alt="Ravana Cave"
-            class="destination-image"
-          />
-          <div class="destination-content">
-            <h2 class="destination-title">Ravana Cave</h2>
-            <p>
-              A historic cave system associated with the legendary King Ravana.
-              According to the Ramayana, it's believed to be where Princess Sita
-              was hidden during her captivity.
-            </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Cave Depth</h4>
-                <p>50 meters</p>
-              </div>
-              <div class="info-item">
-                <h4>Visit Duration</h4>
-                <p>30-45 mins</p>
-              </div>
-              <div class="info-item">
-                <h4>Accessibility</h4>
-                <p>Moderate</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Bring a flashlight</li>
-              <li>Wear sturdy shoes</li>
-              <li>Visit with a guide recommended</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Ravana Mega Zip Line -->
-        <div class="destination-card">
-          <img
-            src="/images/RavanaZipline.jpg"
-            alt="Ravana Mega Zip Line"
-            class="destination-image"
-          />
-          <div class="destination-content">
-            <h2 class="destination-title">Ravana Mega Zip Line</h2>
-            <p>
-              An exciting adventure activity offering breathtaking aerial views
-              of Ella's landscape. One of the longest zip lines in Sri Lanka,
-              stretching across the valley.
-            </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Length</h4>
-                <p>500 meters</p>
-              </div>
-              <div class="info-item">
-                <h4>Duration</h4>
-                <p>15-20 mins</p>
-              </div>
-              <div class="info-item">
-                <h4>Height</h4>
-                <p>80 meters</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Book in advance</li>
-              <li>Weight limit applies</li>
-              <li>Follow safety instructions carefully</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Ella Swing -->
-        <div class="destination-card">
-          <img
-            src="/images/EllaSwing.jpg"
-            alt="Ella Swing"
-            class="destination-image"
-          />
-          <div class="destination-content">
-            <h2 class="destination-title">Ella Swing</h2>
-            <p>
-              A popular photo spot offering a unique experience of swinging over
-              Ella's beautiful valley. Located at various guesthouses and
-              viewpoints around Ella.
-            </p>
-
-            <div class="info-grid">
-              <div class="info-item">
-                <h4>Best Time</h4>
-                <p>Morning</p>
-              </div>
-              <div class="info-item">
-                <h4>Duration</h4>
-                <p>15-30 mins</p>
-              </div>
-              <div class="info-item">
-                <h4>Cost</h4>
-                <p>Varies</p>
-              </div>
-            </div>
-
-            <h4>Visitor Tips:</h4>
-            <ul class="tips-list">
-              <li>Book time slot in advance</li>
-              <li>Wear comfortable clothing</li>
-              <li>Bring camera for photos</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
+    <div id="footer-placeholder"></div>
 
     <script>
       // Parallax Effect
       window.addEventListener("scroll", () => {
         const parallax = document.querySelector(".parallax-layer");
         let scrollPosition = window.pageYOffset;
-        let scale = 1 + scrollPosition * 0.0003; // Add subtle zoom effect
+        let scale = 1 + scrollPosition * 0.0003;
         parallax.style.transform = `translateY(${
           scrollPosition * 0.5
         }px) scale(${scale})`;
       });
+
       // Scroll Animation
       const cards = document.querySelectorAll(".destination-card");
       const observer = new IntersectionObserver(
@@ -605,6 +188,21 @@
       );
 
       cards.forEach((card) => observer.observe(card));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load navbar.html content
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
     </script>
   </body>
 </html>
