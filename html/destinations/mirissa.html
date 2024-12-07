@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Mirissa - Sri Lanka's Paradise Beach Haven</title>
+    <link rel="stylesheet" href="/css/destination details.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="parallax-hero">
+      <div
+        class="parallax-layer"
+        style="
+          background-image: url('/images/Mirissa/mirissa-beach-sri-lanka-1.jpg');
+        "
+      ></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Experience Mirissa</h1>
+        <p class="hero-subtitle">Where Ocean Dreams Come True</p>
+      </div>
+    </div>
+
+    <section class="overview-section">
+      <div class="overview-container">
+        <div class="overview-content">
+          <h2 class="section-title">Discover Mirissa</h2>
+          <br />
+          <br />
+          <p>
+            Welcome to Mirissa, a tropical paradise on Sri Lanka's south coast,
+            renowned for its whale watching opportunities and pristine beaches.
+            This coastal haven offers the perfect blend of marine adventures and
+            relaxed beach life.
+          </p>
+          <br />
+          <p>Essential experiences in Mirissa:</p>
+          <br />
+          <ul>
+            <li>World-famous whale and dolphin watching</li>
+            <li>Swimming and surfing at the main beach</li>
+            <li>Spectacular sunset viewpoints</li>
+            <li>Fresh seafood dining by the beach</li>
+          </ul>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31736.62126838844!2d80.4524!3d5.9463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b4a29e6c7%3A0xf2b20b329c7840d4!2sMirissa!5e0!3m2!1sen!2slk!4v1701856247688!5m2!1sen!2slk"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Must-Visit Destinations</h2>
+        <p class="section-subtitle">
+          Essential experiences in Mirissa's coastal paradise
+        </p>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="destination-card">
+          <img
+            src="/images/Whale Watching.jpg"
+            alt="Whale Watching"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Whale Watching</h3>
+            <p>
+              Mirissa's premier attraction and one of the world's best locations
+              for watching blue whales and sperm whales. The season runs from
+              November to April, with peak sightings from December to March.
+              Early morning tours (starting at 6:30 AM) offer the best
+              conditions and highest chances of sightings. Besides whales,
+              you're likely to spot dolphins, flying fish, and various sea
+              birds.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Mirissa/Mirissa main beach.jpg"
+            alt="Mirissa Beach"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Mirissa Main Beach</h3>
+            <p>
+              The heart of Mirissa's beach life, this stunning crescent-shaped
+              beach offers something for everyone. The calm eastern end is
+              perfect for swimming and sunbathing, while the western end
+              provides excellent surfing opportunities from November to April.
+              The beach comes alive at sunset with beachfront restaurants
+              serving fresh seafood and tropical cocktails. The perfect spot to
+              experience Sri Lanka's legendary sunsets.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Mirissa/coconut tree hill.jpg"
+            alt="Coconut Tree Hill"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Coconut Tree Hill</h3>
+            <p>
+              The most iconic viewpoint in Mirissa and one of Sri Lanka's most
+              photographed locations. This palm tree-covered promontory offers
+              breathtaking ocean views and is especially magical during sunrise.
+              Visit early morning (before 8 AM) to avoid crowds and catch the
+              best light for photos. During whale watching season, you might
+              even spot whales breaching in the distance.
+            </p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/images/Mirissa/parrot rock.jpg"
+            alt="Parrot Rock"
+            class="destination-image"
+          />
+          <div class="destination-content">
+            <h3 class="destination-title">Parrot Rock</h3>
+            <p>
+              This distinctive rock formation, accessible via a sandy causeway
+              from the main beach, offers spectacular 360-degree views of the
+              coastline. Best visited during low tide, the rock features a
+              viewing platform perfect for sunset watching and photography. Time
+              your visit according to tide tables, and enjoy views of both the
+              main beach and the endless Indian Ocean.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        const parallax = document.querySelector(".parallax-layer");
+        let scrollPosition = window.pageYOffset;
+        let scale = 1 + scrollPosition * 0.0003;
+        parallax.style.transform = `translateY(${
+          scrollPosition * 0.5
+        }px) scale(${scale})`;
+      });
+
+      // Scroll Animation
+      const cards = document.querySelectorAll(".destination-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>
