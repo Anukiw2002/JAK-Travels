@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAK Travels</title>
+    <link rel="icon" type="image/png" href="/images/logoIcon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -12,6 +14,89 @@
     <link rel="stylesheet" href="/css/landing-WhyChooseUs.css" />
     <link rel="stylesheet" href="/css/landing-packages.css" />
     <link rel="stylesheet" href="/css/landing-gallery.css" />
+    <style>
+      /* Base animation classes */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Slide in from left */
+      .slide-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-left.revealed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Slide in from right */
+      .slide-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-right.revealed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Staggered animations for cards */
+      .feature-card,
+      .package-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.3s ease-out;
+      }
+
+      .feature-card.revealed,
+      .package-card.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Add delay to staggered elements */
+      .stagger-animation:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .stagger-animation:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .stagger-animation:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .stagger-animation:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      .stagger-animation:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+      .stagger-animation:nth-child(6) {
+        transition-delay: 0.6s;
+      }
+
+      /* Interactive hover effects */
+      .feature-card,
+      .package-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .feature-card:hover,
+      .package-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
   <body>
     <div id="navbar-placeholder"></div>
@@ -19,7 +104,7 @@
 
     <!-- Welcome Section -->
     <section class="welcome-section">
-      <div class="welcome-content animate-fade-up">
+      <div class="welcome-content">
         <h1 class="section-title">Welcome to JAK Travels</h1>
         <p class="welcome-text">
           Step into a world of extraordinary adventures with JAK Travels, your
@@ -34,7 +119,7 @@
           ensures that every journey with us becomes a story worth telling.
         </p>
       </div>
-      <div class="welcome-image animate-fade-left">
+      <div class="welcome-image">
         <div class="image-container">
           <img src="/images/Sri Lanka.jpg" alt="Sri Lanka Experience" />
         </div>
@@ -155,36 +240,13 @@
                 sites.
               </p>
               <div class="package-footer">
-                <div class="price">From $1,299</div>
+                <div class="price"></div>
                 <button
                   class="explore-btn"
                   onclick="window.location.href='/html/packages/classic.html'"
                 >
                   Explore Package
                 </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="package-card">
-            <div class="package-image">
-              <img src="/images/Pasikuda.jpg" alt="Beach & Relaxation" />
-              <div class="duration-badge">5 Days / 4 Nights</div>
-            </div>
-            <div class="package-content">
-              <h3>Beach & Relaxation</h3>
-              <p class="package-subtitle">Coastal Paradise</p>
-              <div class="package-highlights">
-                <span>Beaches</span>
-                <span>Water Sports</span>
-                <span>Spa</span>
-              </div>
-              <p class="package-description">
-                Experience the pristine beaches and coastal charm of Sri Lanka.
-              </p>
-              <div class="package-footer">
-                <div class="price">From $699</div>
-                <button class="explore-btn">Explore Package</button>
               </div>
             </div>
           </div>
@@ -207,8 +269,42 @@
                 habitat.
               </p>
               <div class="package-footer">
-                <div class="price">From $999</div>
-                <button class="explore-btn">Explore Package</button>
+                <div class="price"></div>
+                <button
+                  class="explore-btn"
+                  onclick="window.location.href='/html/packages/wildlife.html'"
+                >
+                  Explore Package
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <div class="package-image">
+              <img src="/images/Sinharaja.jpg" alt="Wildlife & Nature" />
+              <div class="duration-badge">11 Days / 10 Nights</div>
+            </div>
+            <div class="package-content">
+              <h3>Into the Wild</h3>
+              <p class="package-subtitle">Wildlife & Nature Adventure</p>
+              <div class="package-highlights">
+                <span>Wildlife</span>
+                <span>Nature</span>
+                <span>Rainforest</span>
+              </div>
+              <p class="package-description">
+                Experience Sri Lanka's diverse ecosystems from rainforests to
+                national parks.
+              </p>
+              <div class="package-footer">
+                <div class="price"></div>
+                <button
+                  class="explore-btn"
+                  onclick="window.location.href='/html/packages/wildlife & nature.html'"
+                >
+                  Explore Package
+                </button>
               </div>
             </div>
           </div>
@@ -216,24 +312,30 @@
           <!-- Second Row -->
           <div class="package-card">
             <div class="package-image">
-              <img src="tea-plantation.jpg" alt="Hill Country Escape" />
-              <div class="duration-badge">7 Days / 6 Nights</div>
+              <img src="/images/beach.jpg" alt="East Coast Escape" />
+              <div class="duration-badge">11 Days / 10 Nights</div>
             </div>
             <div class="package-content">
-              <h3>Hill Country Escape</h3>
-              <p class="package-subtitle">Mountain Retreat</p>
+              <h3>East Coast Escape</h3>
+              <p class="package-subtitle">Coastal & Cultural Adventure</p>
               <div class="package-highlights">
-                <span>Tea Estates</span>
-                <span>Train Rides</span>
-                <span>Waterfalls</span>
+                <span>Beaches</span>
+                <span>Culture</span>
+                <span>Wildlife</span>
               </div>
               <p class="package-description">
-                Experience the cool climes and lush landscapes of Sri Lanka's
-                highlands.
+                Journey along Sri Lanka's pristine eastern coastline, from the
+                historic ports of Trincomalee to the surfing paradise of Arugam
+                Bay.
               </p>
               <div class="package-footer">
-                <div class="price">From $849</div>
-                <button class="explore-btn">Explore Package</button>
+                <div class="price"></div>
+                <button
+                  class="explore-btn"
+                  onclick="window.location.href='/html/packages/east coast.html'"
+                >
+                  Explore Package
+                </button>
               </div>
             </div>
           </div>
@@ -375,6 +477,61 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+
+      // Scroll reveal animation
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+            }
+          });
+        }, observerOptions);
+
+        // Add classes and observers to elements
+
+        // Welcome section
+        const welcomeContent = document.querySelector(".welcome-content");
+        const welcomeImage = document.querySelector(".welcome-image");
+        if (welcomeContent) {
+          welcomeContent.classList.add("slide-right");
+          observer.observe(welcomeContent);
+        }
+        if (welcomeImage) {
+          welcomeImage.classList.add("slide-left");
+          observer.observe(welcomeImage);
+        }
+
+        // Section headers
+        document.querySelectorAll(".section-header").forEach((element) => {
+          element.classList.add("scroll-reveal");
+          observer.observe(element);
+        });
+
+        // Feature cards
+        document.querySelectorAll(".feature-card").forEach((element) => {
+          element.classList.add("scroll-reveal", "stagger-animation");
+          observer.observe(element);
+        });
+
+        // Package cards
+        document.querySelectorAll(".package-card").forEach((element) => {
+          element.classList.add("scroll-reveal", "stagger-animation");
+          observer.observe(element);
+        });
+        // Additional elements to animate
+        document
+          .querySelectorAll(".packages-grid, .features-grid")
+          .forEach((element) => {
+            element.classList.add("scroll-reveal");
+            observer.observe(element);
           });
       });
     </script>

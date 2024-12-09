@@ -64,7 +64,7 @@ body {
 }
 
 .logo img {
-  height: 60px; /* Increased from 48px */
+  height: 55px; /* Increased from 48px */
   width: auto;
   transition: var(--transition);
   /* Add minimal drop shadow to make logo pop */
