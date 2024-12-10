@@ -74,6 +74,125 @@
   flex: 1;
 }
 
+.phone-input-wrapper {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  min-width: 200px;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select-options.show {
+  display: block;
+}
+
+.search-container {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.custom-select-option {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-select-option:hover {
+  background-color: #f5f5f5;
+}
+
+.custom-select img,
+.custom-select-option img {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+}
+
+.country-code {
+  background-color: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-family: monospace;
+}
+
+.phone-input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.no-results {
+  padding: 10px;
+  text-align: center;
+  color: #666;
+}
+
+/* Custom scrollbar for the dropdown */
+.custom-select-options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-select-options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .required {
   color: #e63946;
   margin-left: 4px;

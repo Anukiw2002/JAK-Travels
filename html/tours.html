@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour Packages - JAK Travels</title>
+    <meta
+      name="description"
+      content="Discover handcrafted Sri Lanka tour packages featuring wildlife safaris, cultural experiences, and beach escapes. Choose from 9-12 day adventures with expert guides and luxury stays."
+    />
+    <meta
+      name="keywords"
+      content="Sri Lanka tours, luxury Sri Lanka packages, wildlife safari Sri Lanka, cultural tours Sri Lanka, beach holidays Sri Lanka, custom Sri Lanka tours"
+    />
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sri Lanka Tour Packages | JAK Travels" />
+    <meta
+      property="og:description"
+      content="Experience the best of Sri Lanka with our curated tour packages. From wildlife safaris to cultural adventures, find your perfect journey."
+    />
+    <meta property="og:image" content="/images/Tours.jpg" />
+    <meta property="og:url" content="https://jaktravels.com/tour-packages" />
     <link rel="icon" type="image/png" href="/images/logoIcon.png" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/landing-packages.css" />
@@ -12,6 +28,28 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "JAK Travels",
+        "url": "https://jaktravels.com",
+        "image": "/images/logoIcon.png",
+        "description": "Luxury Sri Lanka tour operator specializing in customized travel experiences",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Sri Lanka"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "offerCount": "6",
+          "lowPrice": "500",
+          "highPrice": "3000",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="navbar-placeholder"></div>
@@ -232,14 +270,17 @@
         </div>
       </div>
 
-      <div class="custom-package scroll-reveal">
-        <h2>Can't find what you're looking for?</h2>
-        <p>Let us create a custom package tailored to your preferences</p>
+      <section class="custom-package scroll-reveal">
+        <h2>Design Your Dream Sri Lanka Adventure</h2>
+        <p>
+          Let our local experts craft a personalized itinerary based on your
+          interests, timeline, and preferences
+        </p>
         <a href="/html/packages/custom.html" class="custom-btn">
           <i class="fas fa-gift"></i>
-          Create Custom Package
+          Start Planning Your Custom Tour
         </a>
-      </div>
+      </section>
     </main>
     <br />
     <br />

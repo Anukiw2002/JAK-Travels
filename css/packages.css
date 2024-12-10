@@ -96,12 +96,12 @@ body {
 
 /* Section Styles */
 .section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
   position: relative;
   animation: fadeInUp 1s ease 0.2s;
   opacity: 0;
@@ -113,9 +113,9 @@ body {
   background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 2.5rem; /* Increased from 1.5rem */
+  margin-bottom: 2rem; /* Increased from 1.5rem */
   position: relative; /* Added */
-  padding-bottom: 1.5rem; /* Added */
+  padding-bottom: 1rem; /* Added */
 }
 
 .section-title::after {

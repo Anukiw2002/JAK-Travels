@@ -9,6 +9,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"
+    />
     <link rel="stylesheet" href="../css/contactUs.css" />
   </head>
   <body>
@@ -110,16 +114,7 @@
                   >
                   <div class="phone-input-wrapper">
                     <select id="countryCode" name="countryCode" required>
-                      <option value="+1">+1 (USA/Canada)</option>
-                      <option value="+44">+44 (UK)</option>
-                      <option value="+33">+33 (France)</option>
-                      <option value="+49">+49 (Germany)</option>
-                      <option value="+81">+81 (Japan)</option>
-                      <option value="+86">+86 (China)</option>
-                      <option value="+91">+91 (India)</option>
-                      <option value="+61">+61 (Australia)</option>
-                      <option value="+55">+55 (Brazil)</option>
-                      <option value="+7">+7 (Russia)</option>
+                      <!-- This will be replaced by JavaScript -->
                     </select>
                     <input
                       type="tel"
@@ -128,6 +123,7 @@
                       required
                       placeholder="Enter your phone number"
                       pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                      class="phone-input"
                     />
                   </div>
                 </div>
@@ -195,7 +191,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="../js/contactForm.js"></script>
+    <script src="/js/contactUs.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // Load navbar.html content
@@ -210,6 +206,183 @@
           .then((data) => {
             document.getElementById("footer-placeholder").innerHTML = data;
           });
+      });
+
+      const countries = [
+        {
+          code: "+1",
+          name: "USA/Canada",
+          flag: "https://flagcdn.com/w40/us.png",
+        },
+        { code: "+44", name: "UK", flag: "https://flagcdn.com/w40/gb.png" },
+        { code: "+33", name: "France", flag: "https://flagcdn.com/w40/fr.png" },
+        {
+          code: "+49",
+          name: "Germany",
+          flag: "https://flagcdn.com/w40/de.png",
+        },
+        { code: "+81", name: "Japan", flag: "https://flagcdn.com/w40/jp.png" },
+        { code: "+86", name: "China", flag: "https://flagcdn.com/w40/cn.png" },
+        { code: "+91", name: "India", flag: "https://flagcdn.com/w40/in.png" },
+        {
+          code: "+61",
+          name: "Australia",
+          flag: "https://flagcdn.com/w40/au.png",
+        },
+        { code: "+55", name: "Brazil", flag: "https://flagcdn.com/w40/br.png" },
+        { code: "+7", name: "Russia", flag: "https://flagcdn.com/w40/ru.png" },
+        { code: "+39", name: "Italy", flag: "https://flagcdn.com/w40/it.png" },
+        { code: "+34", name: "Spain", flag: "https://flagcdn.com/w40/es.png" },
+        {
+          code: "+31",
+          name: "Netherlands",
+          flag: "https://flagcdn.com/w40/nl.png",
+        },
+        {
+          code: "+82",
+          name: "South Korea",
+          flag: "https://flagcdn.com/w40/kr.png",
+        },
+        {
+          code: "+65",
+          name: "Singapore",
+          flag: "https://flagcdn.com/w40/sg.png",
+        },
+        { code: "+971", name: "UAE", flag: "https://flagcdn.com/w40/ae.png" },
+        {
+          code: "+27",
+          name: "South Africa",
+          flag: "https://flagcdn.com/w40/za.png",
+        },
+        { code: "+52", name: "Mexico", flag: "https://flagcdn.com/w40/mx.png" },
+        { code: "+46", name: "Sweden", flag: "https://flagcdn.com/w40/se.png" },
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create and insert the custom select HTML
+        const phoneInputWrapper = document.querySelector(
+          ".phone-input-wrapper"
+        );
+        const customSelectHTML = `
+        <div class="custom-select-wrapper">
+            <div class="custom-select">
+                <img src="${countries[0].flag}" alt="${countries[0].name} flag">
+                <span class="country-code">${countries[0].code}</span>
+            </div>
+            <div class="custom-select-options">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search country or code...">
+                </div>
+                <div class="options-container">
+                    ${countries
+                      .map(
+                        (country) => `
+                        <div class="custom-select-option" data-value="${
+                          country.code
+                        }" data-search="${country.name.toLowerCase()} ${
+                          country.code
+                        }">
+                            <img src="${country.flag}" alt="${
+                          country.name
+                        } flag">
+                            <span class="country-code">${country.code}</span>
+                            <span>${country.name}</span>
+                        </div>
+                    `
+                      )
+                      .join("")}
+                </div>
+                <div class="no-results" style="display: none;">No matching countries found</div>
+            </div>
+            <input type="hidden" id="countryCode" name="countryCode" value="${
+              countries[0].code
+            }">
+        </div>
+    `;
+
+        // Replace the existing select with our custom one
+        const oldSelect = phoneInputWrapper.querySelector("select");
+        oldSelect.insertAdjacentHTML("beforebegin", customSelectHTML);
+        oldSelect.remove();
+
+        // Add event listeners
+        const customSelect = document.querySelector(".custom-select");
+        const customSelectOptions = document.querySelector(
+          ".custom-select-options"
+        );
+        const searchInput = document.querySelector(".search-input");
+        const optionsContainer = document.querySelector(".options-container");
+        const noResults = document.querySelector(".no-results");
+        const hiddenInput = document.querySelector("#countryCode");
+
+        // Toggle dropdown
+        customSelect.addEventListener("click", () => {
+          customSelectOptions.classList.toggle("show");
+          if (customSelectOptions.classList.contains("show")) {
+            searchInput.focus();
+          }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          if (
+            !customSelect.contains(e.target) &&
+            !customSelectOptions.contains(e.target)
+          ) {
+            customSelectOptions.classList.remove("show");
+            searchInput.value = "";
+            filterOptions("");
+          }
+        });
+
+        // Search functionality
+        function filterOptions(searchTerm) {
+          const options = document.querySelectorAll(".custom-select-option");
+          let hasResults = false;
+
+          options.forEach((option) => {
+            const searchData = option.dataset.search;
+            if (searchData.includes(searchTerm.toLowerCase())) {
+              option.style.display = "flex";
+              hasResults = true;
+            } else {
+              option.style.display = "none";
+            }
+          });
+
+          noResults.style.display = hasResults ? "none" : "block";
+        }
+
+        searchInput.addEventListener("input", (e) => {
+          filterOptions(e.target.value);
+        });
+
+        // Handle option selection
+        document.querySelectorAll(".custom-select-option").forEach((option) => {
+          option.addEventListener("click", () => {
+            const value = option.dataset.value;
+            const country = countries.find((c) => c.code === value);
+
+            // Update hidden input
+            hiddenInput.value = value;
+
+            // Update display
+            customSelect.innerHTML = `
+                <img src="${country.flag}" alt="${country.name} flag">
+                <span class="country-code">${country.code}</span>
+            `;
+
+            // Reset search and close dropdown
+            searchInput.value = "";
+            filterOptions("");
+            customSelectOptions.classList.remove("show");
+          });
+        });
+
+        // Prevent dropdown from closing when clicking on search input
+        searchInput.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
       });
     </script>
   </body>
