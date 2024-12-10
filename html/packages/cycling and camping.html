@@ -26,6 +26,11 @@
       </div>
     </div>
 
+    <button id="floatingBookBtn" class="floating-book-btn">
+      <span>Book Now</span>
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
     <main class="container">
       <section class="section scroll-reveal">
         <div class="section-header">
@@ -745,6 +750,154 @@
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="enquiry-section scroll-reveal">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Book Your Cycling & Camping Adventure</h2>
+            <p class="section-subtitle">Begin Your Two-Wheeled Journey Through Sri Lanka's Hidden Trails</p>
+            <div class="booking-info">
+              <p class="info-text">
+                Fill out this form and our expert team will create a customized
+                Classic Adventure package just for you. We'll contact you within
+                24 hours with:
+              </p>
+              <ul class="info-list">
+                <li>Your personalized itinerary</li>
+                <li>Detailed pricing based on your preferences</li>
+                <li>Available dates and accommodation options</li>
+                <li>Additional activities and experiences</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="enquiry-form-container">
+            <form id="classicPackageForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-grid">
+                <!-- Personal Information -->
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <select id="title" name="title" required>
+                    <option value="">Select</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Dr">Dr</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" required />
+                </div>
+
+                <!-- Contact Details -->
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="countryCode">Country Code</label>
+                  <input
+                    type="text"
+                    id="countryCode"
+                    name="countryCode"
+                    placeholder="e.g. +1"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+
+                <!-- Travel Dates -->
+                <div class="form-group">
+                  <label for="startDate">Start Date</label>
+                  <input type="date" id="startDate" name="startDate" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="endDate">End Date</label>
+                  <input type="date" id="endDate" name="endDate" required />
+                </div>
+
+                <!-- Travelers -->
+                <div class="form-group">
+                  <label for="adults">Number of Adults</label>
+                  <input
+                    type="number"
+                    id="adults"
+                    name="adults"
+                    min="1"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="children" class="optional"
+                    >Children (0-11 years)</label
+                  >
+                  <input type="number" id="children" name="children" min="0" />
+                </div>
+
+                <div class="form-group">
+                  <label for="accommodation">Accommodation Preference</label>
+                  <select id="accommodation" name="accommodation" required>
+                    <option value="">Select</option>
+                    <option value="standard">Standard</option>
+                    <option value="superior">Superior</option>
+                    <option value="deluxe">Deluxe</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="country">Country of Residence</label>
+                  <input type="text" id="country" name="country" required />
+                </div>
+
+                <!-- Special Requirements -->
+                <div class="form-group full-width">
+                  <label for="requirements" class="optional"
+                    >Special Requirements</label
+                  >
+                  <textarea
+                    id="requirements"
+                    name="requirements"
+                    rows="4"
+                    placeholder="Any dietary requirements, medical conditions, or special requests?"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button type="submit" class="btn">Enquire Now</button>
+              </div>
+            </form>
+
+            <div
+              id="successMessage"
+              class="success-message"
+              style="display: none"
+            >
+              <i class="fas fa-check-circle"></i>
+              <h3>Thank You for Choosing Our Classic Adventure!</h3>
+              <p>
+                Your booking request has been submitted successfully. Our team
+                will contact you within 24 hours to confirm your amazing
+                journey.
+              </p>
             </div>
           </div>
         </div>

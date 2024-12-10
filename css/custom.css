@@ -166,3 +166,113 @@
     grid-template-columns: 1fr;
   }
 }
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.destination-option {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.destination-option img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.destination-option input[type="checkbox"] {
+  display: none;
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.destination-option input[type="checkbox"]:checked + .destination-overlay {
+  background: rgba(42, 157, 143, 0.8);
+}
+
+.package-notice {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--gradient);
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.package-notice i {
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.flexible-option {
+  margin-bottom: 2rem;
+}
+
+.destination-preference {
+  display: block;
+  cursor: pointer;
+}
+
+.destination-preference input[type="checkbox"] {
+  display: none;
+}
+
+.flexible-content {
+  padding: 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.flexible-content:hover {
+  border-color: var(--secondary);
+}
+
+.flexible-content i {
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+.flexible-content h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.flexible-content p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.destination-preference input[type="checkbox"]:checked + .flexible-content {
+  background: var(--gradient);
+  border-color: transparent;
+}
+
+.destination-preference input[type="checkbox"]:checked + .flexible-content i,
+.destination-preference input[type="checkbox"]:checked + .flexible-content h4,
+.destination-preference input[type="checkbox"]:checked + .flexible-content p {
+  color: white;
+}

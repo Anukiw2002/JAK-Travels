@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Adventure - JAK Travels</title>
+    <link rel="icon" type="image/png" href="/images/logoIcon.png" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/custom.css" />
     <link
@@ -91,6 +92,71 @@
                 <i class="fas fa-spa"></i>
                 Wellness & Ayurveda
               </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Destinations Section -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-map-marker-alt"></i> Select Your Destinations
+            <div class="info-tooltip">
+              <i class="fas fa-info-circle"></i>
+              <span class="tooltip-text"
+                >Select specific destinations or let us suggest the best places
+                based on your interests</span
+              >
+            </div>
+          </h3>
+
+          <div class="flexible-option">
+            <label class="destination-preference">
+              <input
+                type="checkbox"
+                name="flexible-destinations"
+                id="flexibleDestinations"
+              />
+              <div class="flexible-content">
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>I'm Flexible with Destinations</h4>
+                <p>
+                  Let our experts suggest the best places based on your
+                  interests and preferences
+                </p>
+              </div>
+            </label>
+          </div>
+
+          <div id="specificDestinations" class="destinations-grid">
+            <label class="destination-option">
+              <input type="checkbox" name="destinations" value="Sigiriya" />
+              <div class="destination-overlay">Sigiriya</div>
+              <img src="/images/Sigiriya2.jpg" alt="Sigiriya" />
+            </label>
+            <label class="destination-option">
+              <input type="checkbox" name="destinations" value="Kandy" />
+              <div class="destination-overlay">Kandy</div>
+              <img src="/images/Kandy Town.jpg" alt="Kandy" />
+            </label>
+            <label class="destination-option">
+              <input type="checkbox" name="destinations" value="Ella" />
+              <div class="destination-overlay">Ella</div>
+              <img src="/images/Ella.jpg" alt="Ella" />
+            </label>
+            <label class="destination-option">
+              <input type="checkbox" name="destinations" value="Yala" />
+              <div class="destination-overlay">Yala</div>
+              <img src="/images/Yala Safari2.jpg" alt="Yala" />
+            </label>
+            <label class="destination-option">
+              <input type="checkbox" name="destinations" value="Galle" />
+              <div class="destination-overlay">Galle</div>
+              <img src="/images/Galle.jpg" alt="Galle" />
+            </label>
+            <label class="destination-option">
+              <input type="checkbox" name="destinations" value="Mirissa" />
+              <div class="destination-overlay">Mirissa</div>
+              <img src="/images/Mirissa.jpg" alt="Mirissa" />
             </label>
           </div>
         </div>
@@ -457,6 +523,29 @@
             document.getElementById("footer-placeholder").innerHTML = data;
           });
       });
+
+      // Handle flexible destinations toggle
+      document
+        .getElementById("flexibleDestinations")
+        .addEventListener("change", function () {
+          const destinationsGrid = document.getElementById(
+            "specificDestinations"
+          );
+          const checkboxes = destinationsGrid.querySelectorAll(
+            'input[type="checkbox"]'
+          );
+
+          if (this.checked) {
+            destinationsGrid.style.opacity = "0.5";
+            destinationsGrid.style.pointerEvents = "none";
+            checkboxes.forEach((checkbox) => {
+              checkbox.checked = false;
+            });
+          } else {
+            destinationsGrid.style.opacity = "1";
+            destinationsGrid.style.pointerEvents = "auto";
+          }
+        });
     </script>
   </body>
 </html>

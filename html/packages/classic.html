@@ -26,6 +26,11 @@
       </div>
     </div>
 
+    <button id="floatingBookBtn" class="floating-book-btn">
+      <span>Book Now</span>
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
     <main class="container">
       <section class="section scroll-reveal">
         <div class="section-header">
@@ -1068,303 +1073,174 @@
       </div>
     </section>
 
-    <section class="enquiry-section scroll-reveal">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Your Travel Plans</h2>
-        </div>
 
-        <div class="enquiry-form-container">
-          <form id="packageEnquiryForm" onsubmit="handleFormSubmit(event)">
-            <div class="form-grid">
-              <!-- Personal Info -->
-              <div class="form-group">
-                <label for="title">Title *</label>
-                <select id="title" name="title" required>
-                  <option value="">Select</option>
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
-                </select>
+        <section class="enquiry-section scroll-reveal">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">Book Your Classic Adventure</h2>
+              <p class="section-subtitle">Your Journey Through Paradise Begins Here</p>
+              <div class="booking-info">
+                  <p class="info-text">Fill out this form and our expert team will create a customized Classic Adventure package just for you. We'll contact you within 24 hours with:</p>
+                  <ul class="info-list">
+                      <li>Your personalized itinerary</li>
+                      <li>Detailed pricing based on your preferences</li>
+                      <li>Available dates and accommodation options</li>
+                      <li>Additional activities and experiences</li>
+                  </ul>
               </div>
-
-              <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required />
-              </div>
-
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required />
-              </div>
-
-              <!-- Travel Details -->
-              <div class="form-group">
-                <label for="itinerary">Itinerary *</label>
-                <select id="itinerary" name="itinerary" required>
-                  <option value="">Select</option>
-                  <option value="courtyards">Courtyards & Verandahs</option>
-                  <option value="wildlife">Wildlife Adventure</option>
-                  <option value="classic">Classic Adventure</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="startDate">Start Date *</label>
-                <input type="date" id="startDate" name="startDate" required />
-              </div>
-
-              <div class="form-group">
-                <label for="endDate">End Date</label>
-                <input type="date" id="endDate" name="endDate" />
-              </div>
-
-              <!-- Accommodation -->
-              <div class="form-group">
-                <label for="accommodationType">Accommodation Type</label>
-                <select id="accommodationType" name="accommodationType">
-                  <option value="">Select</option>
-                  <option value="standard">Standard</option>
-                  <option value="superior">Superior</option>
-                  <option value="deluxe">Deluxe</option>
-                </select>
-              </div>
-
-              <!-- Group Details -->
-              <div class="form-group">
-                <label for="adults">No. Adults *</label>
-                <input
-                  type="number"
-                  id="adults"
-                  name="adults"
-                  min="1"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="children">No. Kids (0-11 Years)</label>
-                <input type="number" id="children" name="children" min="0" />
-              </div>
-
-              <div class="form-group">
-                <label for="infants">No. Infants</label>
-                <input type="number" id="infants" name="infants" min="0" />
-              </div>
-
-              <!-- Budget -->
-              <div class="form-group full-width">
-                <label for="budget">Budget? *</label>
-                <select id="budget" name="budget" required>
-                  <option value="">Select</option>
-                  <option value="2000-3000">$2,000 - $3,000 per person</option>
-                  <option value="3000-4000">$3,000 - $4,000 per person</option>
-                  <option value="4000-5000">$4,000 - $5,000 per person</option>
-                  <option value="5000+">$5,000+ per person</option>
-                </select>
-              </div>
-
-              <!-- Contact Details -->
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Contact No *</label>
-                <div class="phone-input">
-                  <select
-                    id="countryCode"
-                    name="countryCode"
-                    class="country-code"
-                  >
-                    <option value="+1">🇺🇸 +1</option>
-                    <option value="+44">🇬🇧 +44</option>
-                    <option value="+61">🇦🇺 +61</option>
-                    <!-- Add more country codes as needed -->
-                  </select>
-                  <input type="tel" id="phone" name="phone" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                  <option value="">Select</option>
-                  <option value="US">United States</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="AU">Australia</option>
-                  <!-- Add more countries as needed -->
-                </select>
-              </div>
-
-              <!-- Additional Information -->
-              <div class="form-group full-width">
-                <label for="additionalInfo">Additional Info (Optional)</label>
-                <textarea
-                  id="additionalInfo"
-                  name="additionalInfo"
-                  rows="4"
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="form-footer">
-              <button type="submit" class="btn">Submit Enquiry</button>
-            </div>
-          </form>
-
-          <div
-            id="successMessage"
-            class="success-message"
-            style="display: none"
-          >
-            <i class="fas fa-check-circle"></i>
-            <h3>Thank You!</h3>
-            <p>
-              Your enquiry has been submitted successfully. Our team will
-              contact you within 24 hours.
-            </p>
           </div>
-        </div>
+
+            <div class="enquiry-form-container">
+              <form id="classicPackageForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-grid">
+                  <!-- Personal Information -->
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <select id="title" name="title" required>
+                      <option value="">Select</option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Dr">Dr</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required />
+                  </div>
+
+                  <!-- Contact Details -->
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="countryCode">Country Code</label>
+                    <input
+                      type="text"
+                      id="countryCode"
+                      name="countryCode"
+                      placeholder="e.g. +1"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required />
+                  </div>
+
+                  <!-- Travel Dates -->
+                  <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input
+                      type="date"
+                      id="startDate"
+                      name="startDate"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" name="endDate" required />
+                  </div>
+
+                  <!-- Travelers -->
+                  <div class="form-group">
+                    <label for="adults">Number of Adults</label>
+                    <input
+                      type="number"
+                      id="adults"
+                      name="adults"
+                      min="1"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="children" class="optional"
+                      >Children (0-11 years)</label
+                    >
+                    <input
+                      type="number"
+                      id="children"
+                      name="children"
+                      min="0"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accommodation">Accommodation Preference</label>
+                    <select id="accommodation" name="accommodation" required>
+                      <option value="">Select</option>
+                      <option value="standard">Standard</option>
+                      <option value="superior">Superior</option>
+                      <option value="deluxe">Deluxe</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="country">Country of Residence</label>
+                    <input type="text" id="country" name="country" required />
+                  </div>
+
+                  <!-- Special Requirements -->
+                  <div class="form-group full-width">
+                    <label for="requirements" class="optional"
+                      >Special Requirements</label
+                    >
+                    <textarea
+                      id="requirements"
+                      name="requirements"
+                      rows="4"
+                      placeholder="Any dietary requirements, medical conditions, or special requests?"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="form-footer">
+                  <button type="submit" class="btn">Enquire Now</button>
+                </div>
+              </form>
+
+              <div
+                id="successMessage"
+                class="success-message"
+                style="display: none"
+              >
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You for Choosing Our Classic Adventure!</h3>
+                <p>
+                  Your booking request has been submitted successfully. Our team
+                  will contact you within 24 hours to confirm your amazing
+                  journey.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
     <div id="footer-placeholder"></div>
+    <script src="/js/packages.js"></script>
 
     <script>
-      // Animation timing configurations
-      const ANIMATION_CONFIG = {
-        scrollReveal: {
-          threshold: 0.15,
-          rootMargin: "0px",
-        },
-        staggerDelay: 100,
-        defaultDuration: 600,
-      };
-
-      // Helper function to handle fetch errors
-      const handleFetchError = (error, context) => {
-        console.error(`Error loading ${context}:`, error);
-      };
-
-      // Helper function for staggered animations
-      const animateWithStagger = (elements, className, baseDelay = 0) => {
-        elements.forEach((element, index) => {
-          setTimeout(() => {
-            element.classList.add(className);
-          }, baseDelay + index * ANIMATION_CONFIG.staggerDelay);
-        });
-      };
-
-      // Enhanced scroll reveal initialization
-      const initScrollReveal = () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Add revealed class to the main element
-              entry.target.classList.add("revealed");
-
-              // Handle section-specific animations
-              if (entry.target.classList.contains("section-header")) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-              }
-
-              // Handle grid cards
-              if (entry.target.classList.contains("grid-3")) {
-                const cards = entry.target.querySelectorAll(".highlight-card");
-                cards.forEach((card, index) => {
-                  setTimeout(() => {
-                    card.style.opacity = "1";
-                    card.style.transform = "translateY(0)";
-                  }, 100 * index);
-                });
-              }
-
-              // Handle package details
-              if (entry.target.classList.contains("package-details")) {
-                const items = entry.target.querySelectorAll(".detail-item");
-                items.forEach((item, index) => {
-                  setTimeout(() => {
-                    item.style.opacity = "1";
-                    item.style.transform = "translateX(0)";
-                  }, 100 * index);
-                });
-              }
-
-              // Handle map section
-              if (entry.target.classList.contains("map-section")) {
-                const mapContainer =
-                  entry.target.querySelector(".map-container");
-                const mapInfo = entry.target.querySelector(".map-info");
-
-                if (mapContainer) {
-                  mapContainer.style.opacity = "1";
-                  mapContainer.style.transform = "translateY(0)";
-                }
-
-                if (mapInfo) {
-                  const items = mapInfo.querySelectorAll(".item");
-                  items.forEach((item, index) => {
-                    setTimeout(() => {
-                      item.style.opacity = "1";
-                      item.style.transform = "translateY(0)";
-                    }, 200 + 100 * index);
-                  });
-                }
-              }
-
-              // Handle itinerary section
-              if (entry.target.classList.contains("day-card")) {
-                const activities =
-                  entry.target.querySelectorAll(".activity-block");
-                activities.forEach((activity, index) => {
-                  setTimeout(() => {
-                    activity.style.opacity = "1";
-                    activity.style.transform = "translateX(0)";
-                  }, 100 * index);
-                });
-              }
-            }
-          });
-        }, ANIMATION_CONFIG.scrollReveal);
-
-        // Observe all relevant elements
-        const elementsToObserve = [
-          ".section-header",
-          ".grid-3",
-          ".package-details",
-          ".map-section",
-          ".day-card",
-          ".scroll-reveal",
-        ].join(",");
-
-        document.querySelectorAll(elementsToObserve).forEach((element) => {
-          observer.observe(element);
-        });
-      };
-
-      // Initialize hero section animations
-      const initHeroAnimations = () => {
-        const heroElements = {
-          title: document.querySelector(".hero-title"),
-          subtitle: document.querySelector(".hero-subtitle"),
-          image: document.querySelector(".hero-image"),
-        };
-
-        if (heroElements.title && heroElements.subtitle && heroElements.image) {
-          heroElements.image.style.animation = "kenBurns 30s infinite";
-          heroElements.title.style.animation =
-            "slideInFromLeft 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards";
-          heroElements.subtitle.style.animation =
-            "slideInFromRight 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards";
-        }
-      };
-
       // Load external HTML content
       const loadExternalContent = () => {
-        fetch("../navbar.html")
+        fetch("/html/navbar.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("navbar-placeholder").innerHTML = data;
@@ -1378,177 +1254,6 @@
           })
           .catch((error) => handleFetchError(error, "footer"));
       };
-
-      // Initialize map loading animation
-      const initMapLoading = () => {
-        const mapContainer = document.querySelector(".map-container");
-        if (mapContainer) {
-          const loadingIndicator = mapContainer.querySelector(".map-loading");
-          if (loadingIndicator) {
-            loadingIndicator.style.display = "block";
-
-            const mapIframe = mapContainer.querySelector("iframe");
-            if (mapIframe) {
-              mapIframe.addEventListener("load", () => {
-                loadingIndicator.style.display = "none";
-                mapContainer.style.opacity = "1";
-              });
-            }
-          }
-        }
-      };
-
-      // Initialize interactive elements
-      const initInteractiveElements = () => {
-        // Card hover effects
-        document.querySelectorAll(".highlight-card").forEach((card) => {
-          card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-10px)";
-          });
-
-          card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
-          });
-        });
-
-        // Activity block hover effects
-        document.querySelectorAll(".activity-block").forEach((block) => {
-          block.addEventListener("mouseenter", () => {
-            const image = block.querySelector(".activity-image");
-            if (image) image.style.transform = "scale(1.05)";
-          });
-
-          block.addEventListener("mouseleave", () => {
-            const image = block.querySelector(".activity-image");
-            if (image) image.style.transform = "scale(1)";
-          });
-        });
-      };
-
-      // Main initialization
-      const initializeApp = () => {
-        // Set initial opacity for elements that will be animated
-        document
-          .querySelectorAll(
-            ".section-header, .highlight-card, .detail-item, .map-container, .map-info .item, .activity-block"
-          )
-          .forEach((element) => {
-            element.style.opacity = "0";
-            element.style.transition =
-              "opacity 0.6s ease-out, transform 0.6s ease-out";
-          });
-
-        initScrollReveal();
-        initHeroAnimations();
-        loadExternalContent();
-        initMapLoading();
-        initInteractiveElements();
-      };
-
-      // Initialize everything when DOM is loaded
-      document.addEventListener("DOMContentLoaded", initializeApp);
-
-      // Handle window resize
-      let resizeTimeout;
-      window.addEventListener("resize", () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(initMapLoading, 250);
-      });
-
-      function handleFormSubmit(event) {
-        event.preventDefault();
-
-        // Get form and success message elements
-        const form = document.getElementById("packageEnquiryForm");
-        const successMessage = document.getElementById("successMessage");
-
-        // Basic form validation
-        if (!form.checkValidity()) {
-          return false;
-        }
-
-        if (!validateForm()) {
-          return;
-        }
-
-        // Collect form data
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        // Here you would typically send the data to your server
-        // For demo purposes, we'll just show the success message
-        console.log("Form Data:", data);
-
-        // Hide form and show success message
-        form.style.display = "none";
-        successMessage.style.display = "block";
-        successMessage.classList.add("show");
-
-        // Optional: Reset form after submission
-        form.reset();
-
-        // Optional: Hide success message after some time
-        setTimeout(() => {
-          form.style.display = "block";
-          successMessage.style.display = "none";
-          successMessage.classList.remove("show");
-        }, 5000);
-      }
-
-      // Add date input validation
-      document
-        .getElementById("travelDate")
-        .addEventListener("input", function (e) {
-          const today = new Date();
-          const selectedDate = new Date(e.target.value);
-
-          if (selectedDate < today) {
-            e.target.setCustomValidity("Please select a future date");
-          } else {
-            e.target.setCustomValidity("");
-          }
-        });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Set minimum date as today for start date
-        const today = new Date().toISOString().split("T")[0];
-        document.getElementById("startDate").min = today;
-
-        // Update end date min value when start date changes
-        document
-          .getElementById("startDate")
-          .addEventListener("change", function (e) {
-            document.getElementById("endDate").min = e.target.value;
-          });
-
-        // Sync country selection with country code
-        document
-          .getElementById("country")
-          .addEventListener("change", function (e) {
-            const countryCodeMap = {
-              US: "+1",
-              UK: "+44",
-              AU: "+61",
-            };
-            const countryCode = countryCodeMap[e.target.value];
-            if (countryCode) {
-              document.getElementById("countryCode").value = countryCode;
-            }
-          });
-      });
-
-      // Add form validation
-      function validateForm() {
-        const startDate = new Date(document.getElementById("startDate").value);
-        const endDate = new Date(document.getElementById("endDate").value);
-
-        if (endDate < startDate) {
-          alert("End date must be after start date");
-          return false;
-        }
-
-        return true;
-      }
     </script>
   </body>
 </html>

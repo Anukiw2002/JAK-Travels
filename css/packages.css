@@ -782,48 +782,129 @@ textarea {
   }
 }
 
-.phone-input {
-  display: flex;
-  gap: 10px;
+/* Form Styles */
+.enquiry-section {
+  padding: 4rem 0;
 }
 
-.country-code {
-  width: 120px;
-  flex-shrink: 0;
+.enquiry-form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Make form elements consistent height */
-select,
-input,
-textarea {
-  height: 45px;
-}
-
-textarea {
-  height: auto;
-}
-
-/* Required field indicator */
-label[for*="required"]::after,
-label[for*="*"]::after {
-  content: " *";
-  color: #dc3545;
-}
-
-/* Update grid for better spacing */
 .form-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 .form-group.full-width {
-  grid-column: 1 / -1;
+  grid-column: span 3;
 }
 
-@media (max-width: 992px) {
-  .form-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #264653;
+  font-weight: 500;
+}
+
+.form-group label::after {
+  content: " *";
+  color: #e63946;
+}
+
+.form-group label.optional::after {
+  content: "";
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2a9d8f;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
+}
+
+.phone-input {
+  display: flex;
+  gap: 1rem;
+}
+
+.phone-input input[type="text"] {
+  width: 100px;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.form-footer .btn {
+  background: linear-gradient(135deg, #2a9d8f, #264653);
+  color: white;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-footer .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.success-message {
+  text-align: center;
+  padding: 3rem;
+  background: #f0fff4;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.success-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-message i {
+  font-size: 3rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+}
+
+.success-message h3 {
+  color: #264653;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  color: #666;
 }
 
 @media (max-width: 768px) {
@@ -831,12 +912,100 @@ label[for*="*"]::after {
     grid-template-columns: 1fr;
   }
 
-  .phone-input {
-    flex-direction: column;
-    gap: 5px;
+  .form-group.full-width {
+    grid-column: auto;
   }
 
-  .country-code {
-    width: 100%;
+  .enquiry-form-container {
+    padding: 2rem;
+  }
+}
+
+.booking-info {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(42, 157, 143, 0.1);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.info-text {
+  color: #264653;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2a9d8f;
+  font-size: 1rem;
+}
+
+.info-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2a9d8f;
+}
+
+.success-message .contact-info {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(42, 157, 143, 0.2);
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.success-message .contact-info strong {
+  color: #2a9d8f;
+}
+
+/* Floating Book Button */
+.floating-book-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--gradient);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.floating-book-btn.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.floating-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .floating-book-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 }

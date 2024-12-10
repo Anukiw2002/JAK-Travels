@@ -200,3 +200,236 @@ window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(initMapLoading, 250);
 });
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  // Get form and success message elements
+  const form = document.getElementById("packageEnquiryForm");
+  const successMessage = document.getElementById("successMessage");
+
+  // Basic form validation
+  if (!form.checkValidity()) {
+    return false;
+  }
+
+  if (!validateForm()) {
+    return;
+  }
+
+  // Collect form data
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  // Here you would typically send the data to your server
+  // For demo purposes, we'll just show the success message
+  console.log("Form Data:", data);
+
+  // Hide form and show success message
+  form.style.display = "none";
+  successMessage.style.display = "block";
+  successMessage.classList.add("show");
+
+  // Optional: Reset form after submission
+  form.reset();
+
+  // Optional: Hide success message after some time
+  setTimeout(() => {
+    form.style.display = "block";
+    successMessage.style.display = "none";
+    successMessage.classList.remove("show");
+  }, 5000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get date input elements
+  const startDateInput = document.getElementById("startDate");
+  const endDateInput = document.getElementById("endDate");
+
+  // Calculate today's date
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  // Format dates for input min attribute
+  const todayFormatted = today.toISOString().split("T")[0];
+  const tomorrowFormatted = tomorrow.toISOString().split("T")[0];
+
+  // Set minimum dates
+  startDateInput.min = todayFormatted;
+  endDateInput.min = tomorrowFormatted;
+
+  // Handle start date changes
+  startDateInput.addEventListener("change", function () {
+    // Calculate minimum end date (day after selected start date)
+    const selectedStart = new Date(this.value);
+    const minEnd = new Date(selectedStart);
+    minEnd.setDate(minEnd.getDate() + 1);
+
+    // Update end date minimum
+    endDateInput.min = minEnd.toISOString().split("T")[0];
+
+    // Clear end date if it's now invalid
+    if (
+      endDateInput.value &&
+      new Date(endDateInput.value) <= new Date(this.value)
+    ) {
+      endDateInput.value = "";
+    }
+  });
+});
+// Add form validation
+function validateForm() {
+  const startDate = new Date(document.getElementById("startDate").value);
+  const endDate = new Date(document.getElementById("endDate").value);
+
+  if (endDate < startDate) {
+    alert("End date must be after start date");
+    return false;
+  }
+
+  return true;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const startDateInput = document.getElementById("startDate");
+  const endDateInput = document.getElementById("endDate");
+
+  // Set minimum date as today for start date
+  const today = new Date().toISOString().split("T")[0];
+  startDateInput.min = today;
+
+  // Update end date minimum when start date changes
+  startDateInput.addEventListener("change", function () {
+    endDateInput.min = this.value;
+
+    // If end date is before new start date, update it
+    if (endDateInput.value && endDateInput.value < this.value) {
+      endDateInput.value = this.value;
+    }
+  });
+
+  // Form submission handler
+  const form = document.getElementById("classicPackageForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    // Show success message
+    form.style.display = "none";
+    const successMessage = document.getElementById("successMessage");
+    successMessage.style.display = "block";
+    successMessage.classList.add("show");
+
+    // Optional: Reset form after submission
+    form.reset();
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      form.style.display = "block";
+      successMessage.style.display = "none";
+      successMessage.classList.remove("show");
+    }, 5000);
+  });
+});
+
+function validateForm() {
+  const startDate = new Date(document.getElementById("startDate").value);
+  const endDate = new Date(document.getElementById("endDate").value);
+  const adults = document.getElementById("adults").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  if (endDate < startDate) {
+    alert("End date must be after start date");
+    return false;
+  }
+
+  if (adults < 1) {
+    alert("At least one adult is required");
+    return false;
+  }
+
+  if (!validateEmail(email)) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+
+  if (!validatePhone(phone)) {
+    alert("Please enter a valid phone number");
+    return false;
+  }
+
+  return true;
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validatePhone(phone) {
+  return /^\d{10,}$/.test(phone.replace(/[^0-9]/g, ""));
+}
+
+// Handle Floating Book Button
+document.addEventListener("DOMContentLoaded", function () {
+  const floatingBtn = document.getElementById("floatingBookBtn");
+  const enquirySection = document.querySelector(".enquiry-section");
+
+  // Show/hide floating button based on scroll position
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > window.innerHeight) {
+      floatingBtn.classList.add("visible");
+    } else {
+      floatingBtn.classList.remove("visible");
+    }
+  });
+
+  // Scroll to enquiry form when clicking the button
+  floatingBtn.addEventListener("click", function () {
+    enquirySection.scrollIntoView({ behavior: "smooth" });
+  });
+
+  // Smooth scroll for quick navigation links
+  document.querySelectorAll(".quick-nav-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});
+
+// Make itinerary collapsible
+document.addEventListener("DOMContentLoaded", function () {
+  const dayCards = document.querySelectorAll(".day-card");
+
+  dayCards.forEach((card, index) => {
+    const header = card.querySelector(".day-header");
+    const activities = card.querySelector(".activities-container");
+
+    // Only show first two days by default
+    if (index > 1) {
+      activities.style.display = "none";
+    }
+
+    // Add expand/collapse arrow
+    const arrow = document.createElement("i");
+    arrow.className = "fas fa-chevron-down day-arrow";
+    header.appendChild(arrow);
+
+    header.style.cursor = "pointer";
+    header.addEventListener("click", function () {
+      const isExpanded = activities.style.display !== "none";
+
+      activities.style.display = isExpanded ? "none" : "block";
+      arrow.style.transform = isExpanded ? "rotate(0deg)" : "rotate(180deg)";
+    });
+  });
+});
