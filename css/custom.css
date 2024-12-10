@@ -1,0 +1,168 @@
+.form-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.form-section h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.interest-option {
+  background: var(--background);
+  padding: 1.5rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.interest-option:hover {
+  transform: translateY(-2px);
+  background: var(--secondary);
+  color: white;
+}
+
+.interest-option input[type="checkbox"] {
+  display: none;
+}
+
+.interest-option input[type="checkbox"]:checked + .interest-content {
+  color: white;
+  background: var(--secondary);
+}
+
+.interest-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.interest-content i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.travelers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.traveler-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.budget-section {
+  margin: 2rem 0;
+}
+
+.budget-range {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.budget-value {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.flexibility-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.flexibility-option {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.flexibility-option:hover {
+  border-color: var(--secondary);
+}
+
+.flexibility-option input[type="radio"] {
+  display: none;
+}
+
+.flexibility-option input[type="radio"]:checked + .flex-content {
+  color: var(--secondary);
+}
+
+.additional-requests {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.info-tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  cursor: help;
+}
+
+.info-tooltip .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9rem;
+}
+
+.info-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .travelers-grid,
+  .date-inputs {
+    grid-template-columns: 1fr;
+  }
+}

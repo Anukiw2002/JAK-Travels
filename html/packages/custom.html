@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Adventure - JAK Travels</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="hero">
+      <img
+        src="/images/Custom Adventure.jpg"
+        alt="Custom Adventure"
+        class="hero-image"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Plan Your Sri Lankan Adventure</h1>
+        <p class="hero-subtitle">
+          Whether you know exactly what you want or are just starting to
+          explore, we're here to help create your perfect journey
+        </p>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+    <br />
+    <br />
+    <main class="container section">
+      <form id="customPackageForm" class="scroll-reveal">
+        <!-- Travel Interests -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-heart"></i>
+            What interests you most about Sri Lanka?
+            <div class="info-tooltip">
+              <i class="fas fa-info-circle"></i>
+              <span class="tooltip-text"
+                >Select all that interest you - we'll suggest destinations based
+                on your preferences</span
+              >
+            </div>
+          </h3>
+          <div class="interests-grid">
+            <label class="interest-option">
+              <input type="checkbox" name="interests" value="culture" />
+              <div class="interest-content">
+                <i class="fas fa-landmark"></i>
+                Ancient Culture & Heritage
+              </div>
+            </label>
+            <label class="interest-option">
+              <input type="checkbox" name="interests" value="wildlife" />
+              <div class="interest-content">
+                <i class="fas fa-paw"></i>
+                Wildlife & Nature
+              </div>
+            </label>
+            <label class="interest-option">
+              <input type="checkbox" name="interests" value="beaches" />
+              <div class="interest-content">
+                <i class="fas fa-umbrella-beach"></i>
+                Beaches & Coastal Life
+              </div>
+            </label>
+            <label class="interest-option">
+              <input type="checkbox" name="interests" value="adventure" />
+              <div class="interest-content">
+                <i class="fas fa-hiking"></i>
+                Adventure & Trekking
+              </div>
+            </label>
+            <label class="interest-option">
+              <input type="checkbox" name="interests" value="food" />
+              <div class="interest-content">
+                <i class="fas fa-utensils"></i>
+                Food & Cuisine
+              </div>
+            </label>
+            <label class="interest-option">
+              <input type="checkbox" name="interests" value="wellness" />
+              <div class="interest-content">
+                <i class="fas fa-spa"></i>
+                Wellness & Ayurveda
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Travel Style -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-compass"></i>
+            What's your preferred travel style?
+          </h3>
+          <div class="flexibility-options">
+            <label class="flexibility-option">
+              <input type="radio" name="travelStyle" value="luxury" />
+              <div class="flex-content">
+                <h4>Luxury & Comfort</h4>
+                <p>5-star hotels, private transfers, exclusive experiences</p>
+              </div>
+            </label>
+            <label class="flexibility-option">
+              <input type="radio" name="travelStyle" value="balanced" />
+              <div class="flex-content">
+                <h4>Balanced & Flexible</h4>
+                <p>Mix of comfort and authentic experiences</p>
+              </div>
+            </label>
+            <label class="flexibility-option">
+              <input type="radio" name="travelStyle" value="adventure" />
+              <div class="flex-content">
+                <h4>Adventure & Local</h4>
+                <p>Authentic stays, local transport, off-beaten-path</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Travel Group -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-users"></i>
+            Who's Traveling?
+          </h3>
+          <div class="travelers-grid">
+            <div class="traveler-input">
+              <label for="adults">Adults (12+ years)</label>
+              <input type="number" id="adults" name="adults" min="1" required />
+            </div>
+            <div class="traveler-input">
+              <label for="children">Children (2-11 years)</label>
+              <input type="number" id="children" name="children" min="0" />
+            </div>
+            <div class="traveler-input">
+              <label for="infants">Infants (0-2 years)</label>
+              <input type="number" id="infants" name="infants" min="0" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Travel Dates -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-calendar"></i>
+            When would you like to travel?
+          </h3>
+          <div class="date-inputs">
+            <div>
+              <label for="startDate">Preferred Start Date</label>
+              <input type="date" id="startDate" name="startDate" required />
+            </div>
+            <div>
+              <label for="endDate">Preferred End Date</label>
+              <input type="date" id="endDate" name="endDate" required />
+            </div>
+          </div>
+          <div class="flexibility-options">
+            <label class="flexibility-option">
+              <input type="radio" name="dateFlexibility" value="exact" />
+              <div class="flex-content">
+                <h4>Exact Dates</h4>
+                <p>My travel dates are fixed</p>
+              </div>
+            </label>
+            <label class="flexibility-option">
+              <input type="radio" name="dateFlexibility" value="flexible" />
+              <div class="flex-content">
+                <h4>Flexible Dates</h4>
+                <p>I can adjust by a few days</p>
+              </div>
+            </label>
+            <label class="flexibility-option">
+              <input type="radio" name="dateFlexibility" value="veryFlexible" />
+              <div class="flex-content">
+                <h4>Very Flexible</h4>
+                <p>Open to suggestions</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Budget -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-wallet"></i>
+            What's your budget per person?
+            <div class="info-tooltip">
+              <i class="fas fa-info-circle"></i>
+              <span class="tooltip-text"
+                >This helps us suggest appropriate accommodations and
+                experiences</span
+              >
+            </div>
+          </h3>
+          <div class="budget-section">
+            <div class="budget-value">$2000 USD</div>
+            <input
+              type="range"
+              min="500"
+              max="5000"
+              step="100"
+              value="2000"
+              class="budget-range"
+              id="budgetSlider"
+            />
+            <p class="text-center text-gray-600">
+              Suggested range: $1000 - $4000 USD per person
+            </p>
+          </div>
+        </div>
+
+        <!-- Special Requirements -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-star"></i>
+            Special Requirements
+          </h3>
+          <div class="form-group">
+            <label for="accessibility">Accessibility Needs</label>
+            <textarea
+              id="accessibility"
+              name="accessibility"
+              rows="2"
+              placeholder="e.g., wheelchair access, ground floor rooms"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dietary">Dietary Requirements</label>
+            <textarea
+              id="dietary"
+              name="dietary"
+              rows="2"
+              placeholder="e.g., vegetarian, gluten-free, allergies"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="additional">Additional Requests or Questions</label>
+            <textarea
+              id="additional"
+              name="additional"
+              rows="3"
+              placeholder="Tell us anything else that would help us plan your perfect trip"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-section">
+          <h3>
+            <i class="fas fa-envelope"></i>
+            Your Contact Details
+          </h3>
+          <div class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (with country code)</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="country">Country of Residence</label>
+              <input type="text" id="country" name="country" required />
+            </div>
+            <div class="form-group">
+              <label for="contactTime">Best time to contact you</label>
+              <select id="contactTime" name="contactTime">
+                <option value="morning">Morning (9am-12pm)</option>
+                <option value="afternoon">Afternoon (12pm-5pm)</option>
+                <option value="evening">Evening (5pm-8pm)</option>
+                <option value="anytime">Anytime</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMethod">Preferred contact method</label>
+              <select id="contactMethod" name="contactMethod">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="whatsapp">WhatsApp</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">
+          <i class="fas fa-paper-plane"></i>
+          Submit Your Travel Request
+        </button>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display: none">
+        <i
+          class="fas fa-check-circle"
+          style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem"
+        ></i>
+        <h2>Thank You for Your Request!</h2>
+        <p>
+          Our travel experts will review your preferences and contact you within
+          24 hours with a customized itinerary suggestion.
+        </p>
+      </div>
+    </main>
+    <br />
+    <br />
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Budget slider functionality
+      const budgetSlider = document.getElementById("budgetSlider");
+      const budgetValue = document.querySelector(".budget-value");
+
+      budgetSlider.addEventListener("input", (e) => {
+        budgetValue.textContent = `$${e.target.value} USD`;
+      });
+
+      // Date validation
+      const startDate = document.getElementById("startDate");
+      const endDate = document.getElementById("endDate");
+
+      // Set minimum date to today
+      const today = new Date().toISOString().split("T")[0];
+      startDate.min = today;
+
+      startDate.addEventListener("change", () => {
+        endDate.min = startDate.value;
+        if (endDate.value && endDate.value < startDate.value) {
+          endDate.value = startDate.value;
+        }
+      });
+
+      // Traveler count validation
+      const adultsInput = document.getElementById("adults");
+      const childrenInput = document.getElementById("children");
+      const infantsInput = document.getElementById("infants");
+
+      function validateTravelers() {
+        const totalTravelers =
+          parseInt(adultsInput.value || 0) +
+          parseInt(childrenInput.value || 0) +
+          parseInt(infantsInput.value || 0);
+
+        if (totalTravelers > 15) {
+          alert(
+            "For groups larger than 15 travelers, please contact us directly for special arrangements."
+          );
+          return false;
+        }
+        return true;
+      }
+
+      [adultsInput, childrenInput, infantsInput].forEach((input) => {
+        input.addEventListener("change", validateTravelers);
+      });
+
+      // Form submission handling
+      document
+        .getElementById("customPackageForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!validateTravelers()) {
+            return;
+          }
+
+          // Collect all form data
+          const formData = new FormData(this);
+          const data = {
+            interests: Array.from(
+              document.querySelectorAll('input[name="interests"]:checked')
+            ).map((cb) => cb.value),
+            travelStyle: document.querySelector(
+              'input[name="travelStyle"]:checked'
+            )?.value,
+            travelers: {
+              adults: formData.get("adults"),
+              children: formData.get("children"),
+              infants: formData.get("infants"),
+            },
+            dates: {
+              start: formData.get("startDate"),
+              end: formData.get("endDate"),
+              flexibility: formData.get("dateFlexibility"),
+            },
+            budget: budgetSlider.value,
+            requirements: {
+              accessibility: formData.get("accessibility"),
+              dietary: formData.get("dietary"),
+              additional: formData.get("additional"),
+            },
+            contact: {
+              name: formData.get("name"),
+              email: formData.get("email"),
+              phone: formData.get("phone"),
+              country: formData.get("country"),
+              contactTime: formData.get("contactTime"),
+              contactMethod: formData.get("contactMethod"),
+            },
+          };
+
+          // Here you would typically send the data to your server
+          console.log("Form Data:", data);
+
+          // Show success message
+          this.style.display = "none";
+          document.getElementById("successMessage").style.display = "block";
+
+          // Scroll to success message
+          document.getElementById("successMessage").scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+
+      // Scroll reveal animation
+      const observerOptions = {
+        threshold: 0.15,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".scroll-reveal").forEach((element) => {
+        observer.observe(element);
+      });
+
+      // Load components
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("../navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>

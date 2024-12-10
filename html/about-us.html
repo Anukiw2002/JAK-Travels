@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | JAK Travels</title>
+    <link rel="icon" type="image/png" href="/images/logoIcon.png" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/about-us.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+      <img
+        src="/images/about us.jpg"
+        alt="Sri Lanka Beauty"
+        class="hero-image"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Discover Paradise With Us</h1>
+        <p class="hero-subtitle">
+          Young, Passionate, and Ready to Show You Our Beautiful Island
+        </p>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+    <br />
+    <br />
+
+    <main class="container">
+      <section class="section scroll-reveal">
+        <div class="section-header">
+          <h2 class="section-title">Our Story</h2>
+          <p class="section-subtitle">
+            We're a group of young travel enthusiasts who share a deep love for
+            Sri Lanka's rich heritage and natural wonders. Our journey began
+            with our own adventures across this beautiful island, and now we're
+            here to share its magic with you.
+          </p>
+        </div>
+      </section>
+
+      <section class="section scroll-reveal">
+        <div class="values-grid">
+          <div class="value-card">
+            <i class="fas fa-eye value-icon"></i>
+            <h3>Our Vision</h3>
+            <p>
+              To become the bridge that connects travelers to the authentic
+              heart of Sri Lanka, creating memories that last a lifetime.
+            </p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-heart value-icon"></i>
+            <h3>Our Mission</h3>
+            <p>
+              To craft personalized travel experiences that showcase Sri Lanka's
+              true essence while supporting local communities and preserving our
+              natural heritage.
+            </p>
+          </div>
+        </div>
+      </section>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div class="section-header">
+        <h2 class="section-title">Why We Love What We Do</h2>
+      </div>
+      <section class="passions-section">
+        <div class="container">
+          <div class="passion-item">
+            <i class="fas fa-mountain passion-icon"></i>
+            <div class="passion-content">
+              <h3>Adventure Seekers</h3>
+              <p>
+                We've hiked every trail and explored every corner of this
+                island, bringing you firsthand experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="passion-item">
+            <i class="fas fa-users passion-icon"></i>
+            <div class="passion-content">
+              <h3>Cultural Enthusiasts</h3>
+              <p>
+                Our deep connection to local traditions helps us create
+                authentic cultural experiences.
+              </p>
+            </div>
+          </div>
+
+          <div class="passion-item">
+            <i class="fas fa-leaf passion-icon"></i>
+            <div class="passion-content">
+              <h3>Nature Lovers</h3>
+              <p>
+                We're committed to sharing Sri Lanka's natural beauty while
+                preserving it for future generations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-section scroll-reveal">
+        <p class="quote-text">
+          Every corner of Sri Lanka tells a story, and we can't wait to help you
+          discover yours.
+        </p>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      const observerOptions = {
+        threshold: 0.15,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".scroll-reveal, .passion-item")
+        .forEach((element) => {
+          observer.observe(element);
+        });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("/html/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
+
+        fetch("/html/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>

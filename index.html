@@ -96,6 +96,41 @@
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
+
+      .custom-package {
+        margin-top: 4rem;
+        background: var(--gradient);
+        border-radius: 20px;
+        padding: 3rem;
+        color: white;
+        text-align: center;
+      }
+
+      .custom-package h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .custom-package p {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .custom-btn {
+        background: white;
+        color: var(--primary);
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-btn:hover {
+        transform: translateY(-2px);
+      }
     </style>
   </head>
   <body>
@@ -342,23 +377,60 @@
 
           <div class="package-card">
             <div class="package-image">
-              <img src="ayurveda.jpg" alt="Wellness Retreat" />
-              <div class="duration-badge">8 Days / 7 Nights</div>
+              <img src="/images/Camping.jpg" alt="Camping" />
+              <div class="duration-badge">9 Days / 8 Nights</div>
             </div>
             <div class="package-content">
-              <h3>Wellness Retreat</h3>
-              <p class="package-subtitle">Rejuvenation Journey</p>
+              <h3>Adventure on Wheels</h3>
+              <p class="package-subtitle">Cycling & Camping Tour</p>
               <div class="package-highlights">
-                <span>Ayurveda</span>
-                <span>Yoga</span>
-                <span>Meditation</span>
+                <span>Cycling</span>
+                <span>Camping</span>
+                <span>Wildlife</span>
               </div>
               <p class="package-description">
-                Immerse yourself in traditional healing and wellness practices.
+                Experience Sri Lanka's diverse landscapes from the saddle of
+                your bike, camping under the stars at national parks and
+                historic sites.
               </p>
               <div class="package-footer">
-                <div class="price">From $899</div>
-                <button class="explore-btn">Explore Package</button>
+                <div class="price"></div>
+                <button
+                  class="explore-btn"
+                  onclick="window.location.href='/html/packages/cycling and camping.html'"
+                >
+                  Explore Package
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Package -->
+          <div class="package-card">
+            <div class="package-image">
+              <img src="/images/heritage.jpg" alt="Custom Adventure" />
+              <div class="duration-badge">Flexible Duration</div>
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Custom Adventure</h3>
+              <p class="package-subtitle">Your Dream Journey</p>
+              <div class="package-highlights">
+                <span>Customizable</span>
+                <span>Flexible</span>
+                <span>Personalized</span>
+              </div>
+              <p class="package-description">
+                Create your perfect Sri Lankan adventure with our expert travel
+                planners.
+              </p>
+              <div class="package-footer">
+                <div class="price"></div>
+                <button
+                  class="explore-btn"
+                  onclick="window.location.href='/html/packages/custom.html'"
+                >
+                  Start Planning
+                </button>
               </div>
             </div>
           </div>
