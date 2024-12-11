@@ -19,6 +19,8 @@
 .welcome-image {
   flex: 1;
   opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
 }
 
 .section-title {

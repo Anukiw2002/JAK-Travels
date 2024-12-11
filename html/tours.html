@@ -328,5 +328,143 @@
       <i class="fab fa-whatsapp whatsapp-icon"></i>
       <span class="whatsapp-text">Chat with us</span>
     </a>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {};
+
+      // Customize the widget before it loads
+      Tawk_API.onBeforeLoad = function () {
+        // Change widget colors and apply custom CSS
+        Tawk_API.maximize();
+        Tawk_API.customStyle = {
+          // Widget positioning and size (matching your CSS)
+          "min-width": "300px",
+          "min-height": "300px",
+          position: "br", // bottom right
+          bottom: "100px",
+          right: "25px",
+
+          // Main widget styling
+          container: `
+              border-radius: 10px !important;
+              box-shadow: 0 5px 25px rgba(0,0,0,0.2) !important;
+              overflow: hidden !important;
+              z-index: 998 !important;
+          `,
+
+          // Header styling
+          "header-background-color": "#2a9d8f",
+          "header-background":
+            "linear-gradient(90deg, #2a9d8f, #264653) !important",
+          header: `
+              padding: 15px !important;
+              display: flex !important;
+              justify-content: space-between !important;
+              align-items: center !important;
+          `,
+
+          // Message area styling
+          "chat-panel": `
+              height: 300px !important;
+              overflow-y: auto !important;
+              padding: 15px !important;
+          `,
+
+          // Message bubbles
+          message: `
+              margin-bottom: 10px !important;
+              padding: 10px !important;
+              border-radius: 10px !important;
+              max-width: 80% !important;
+          `,
+
+          // Bot message styling
+          "agent-message": `
+              background: #f0f0f0 !important;
+              margin-right: auto !important;
+          `,
+
+          // User message styling
+          "visitor-message": `
+              background: #2a9d8f !important;
+              color: white !important;
+              margin-left: auto !important;
+          `,
+
+          // Input area styling
+          "input-frame": `
+              display: flex !important;
+              padding: 15px !important;
+              border-top: 1px solid #eee !important;
+          `,
+
+          // Input field
+          input: `
+              flex: 1 !important;
+              padding: 8px !important;
+              border: 1px solid #ddd !important;
+              border-radius: 20px !important;
+              margin-right: 10px !important;
+          `,
+
+          // Send button
+          button: `
+              background: #2a9d8f !important;
+              color: white !important;
+              border: none !important;
+              padding: 8px 15px !important;
+              border-radius: 20px !important;
+              cursor: pointer !important;
+          `,
+
+          // Chat trigger button
+          bubble: `
+              right: 25px !important;
+              bottom: 100px !important;
+              background: linear-gradient(90deg, #2a9d8f, #264653) !important;
+              border-radius: 50% !important;
+              width: 60px !important;
+              height: 60px !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+              z-index: 997 !important;
+          `,
+        };
+      };
+
+      // Customize widget content
+      Tawk_API.onLoad = function () {
+        // Set visitor name if known
+        Tawk_API.setAttributes(
+          {
+            name: "Visitor Name",
+            email: "visitor@email.com",
+          },
+          function (error) {}
+        );
+
+        // Set custom welcome message
+        Tawk_API.visitor = {
+          name: "Visitor",
+          email: "email@email.com",
+        };
+      };
+
+      // Initialize Tawk.to widget
+      var Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/67584fca49e2fd8dfef5d5f2/1ieoffcr1";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
   </body>
 </html>

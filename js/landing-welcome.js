@@ -21,7 +21,9 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       if (entry.target.classList.contains("welcome-section")) {
-        const statNumbers = entry.target.querySelectorAll(".stat-number");
+        const statNumbers = Array.from(
+          entry.target.querySelectorAll(".stat-number")
+        );
         statNumbers.forEach((stat) => {
           const target = parseInt(stat.getAttribute("data-target"));
           animateCounter(stat, target);
@@ -38,18 +40,27 @@ document.querySelectorAll(".welcome-content, .welcome-image").forEach((el) => {
 });
 
 // Observe welcome section
-document.querySelector(".welcome-section").forEach((section) => {
+const welcomeSections = document.querySelectorAll(".welcome-section");
+welcomeSections.forEach((section) => {
   observer.observe(section);
 });
 
-// Parallax effect for image
-window.addEventListener("scroll", () => {
-  const image = document.querySelector(".welcome-image img");
-  const scrolled = window.pageYOffset;
-  const rate = scrolled * 0.15;
+// Image slide-in effect
+const welcomeImage = document.querySelector(".welcome-image img");
+const welcomeImageContainer = document.querySelector(".welcome-image");
 
-  if (window.innerWidth > 768) {
-    // Only on desktop
-    image.style.transform = `translate3d(0, ${rate}px, 0)`;
+const imageObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        welcomeImage.classList.add("animate-slide-in");
+        imageObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2, // Trigger the animation when 20% of the element is visible
   }
-});
+);
+
+imageObserver.observe(welcomeImageContainer);
