@@ -1014,8 +1014,8 @@
             <div class="booking-info">
               <p class="info-text">
                 Fill out this form and our expert team will create a customized
-                Classic Adventure package just for you. We'll contact you within
-                24 hours with:
+                Wildlife and Nature Adventure package just for you. We'll
+                contact you within 24 hours with:
               </p>
               <ul class="info-list">
                 <li>Your personalized itinerary</li>
@@ -1159,22 +1159,74 @@
     <script src="/js/packages.js"></script>
 
     <script>
-      // Load external HTML content
-      const loadExternalContent = () => {
+      document.addEventListener("DOMContentLoaded", () => {
+        // First load the navbar
         fetch("/html/navbar.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("navbar-placeholder").innerHTML = data;
-          })
-          .catch((error) => handleFetchError(error, "navbar"));
+            // Initialize navbar AFTER it's loaded
+            initializeNavbar();
+          });
 
         fetch("/html/footer.html")
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("footer-placeholder").innerHTML = data;
-          })
-          .catch((error) => handleFetchError(error, "footer"));
-      };
+          });
+
+        // Navbar initialization function
+        function initializeNavbar() {
+          const hamburger = document.querySelector(".hamburger");
+          const navLinks = document.querySelector(".nav-links");
+          const body = document.body;
+
+          if (!hamburger || !navLinks) {
+            console.error("Menu elements not found!");
+            return;
+          }
+
+          function toggleMenu() {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+            body.classList.toggle("menu-open");
+          }
+
+          // Toggle menu on hamburger click
+          hamburger.addEventListener("click", toggleMenu);
+
+          // Close menu when clicking a link
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth <= 992) {
+                toggleMenu();
+              }
+            });
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", (e) => {
+            if (
+              window.innerWidth <= 992 &&
+              navLinks.classList.contains("active") &&
+              !navLinks.contains(e.target) &&
+              !hamburger.contains(e.target)
+            ) {
+              toggleMenu();
+            }
+          });
+
+          // Handle window resize
+          window.addEventListener("resize", () => {
+            if (
+              window.innerWidth > 992 &&
+              navLinks.classList.contains("active")
+            ) {
+              toggleMenu();
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
